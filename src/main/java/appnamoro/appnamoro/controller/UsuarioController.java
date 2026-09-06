@@ -50,6 +50,7 @@ public class UsuarioController {
         return "Usuário não encontrado";
     }
 
+    //atualizar o usuário
     @PutMapping("/{id}")
     public Usuario atualizarUsuario (@PathVariable Long id, @RequestBody Usuario dadosNovos){
         for (Usuario pessoa : listaUsuario){
