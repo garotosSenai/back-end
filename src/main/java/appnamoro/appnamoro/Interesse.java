@@ -10,7 +10,8 @@ public class Interesse {
     public Interesse (){
     }
 
-    public Interesse(String nomeInteresse, String categoriaInteresse, String descricao){
+    public Interesse(Long idUsuario, String nomeInteresse, String categoriaInteresse, String descricao){
+        this.idUsuario = idUsuario;
         this.nomeInteresse = nomeInteresse;
         this.categoriaInteresse = categoriaInteresse;
         this.descricao = descricao;
