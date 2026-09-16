@@ -30,6 +30,7 @@ public class InteresseController {
         return listaInteresse;
     }
 
+    //buscar por id
     @GetMapping("/{id}")
     public Interesse buscarPorId (@PathVariable Long id) {
         for (Interesse pessoa : listaInteresse) {
@@ -40,15 +41,28 @@ public class InteresseController {
         return null;
     }
 
+    //deletar interesse
     @DeleteMapping("/{id}")
     public String removerInteresse (@PathVariable Long id){
         boolean removido = listaInteresse.removeIf(pessoa -> pessoa.getIdUsuario().equals(id));
 
         if (removido) {
-            IO.println("Usuário removido com sucesso");
+            IO.println("Interesse removido com sucesso");
         }
-        return "Usuário não encontrado";
+        return "Interesse não encontrado";
     }
 
+    //atualizar interesse
+    @PutMapping("/{id}")
+    public Interesse atualizarInteresses (@PathVariable Long id, @RequestBody Interesse novosDados){
+        for (Interesse pessoa : listaInteresse){
+            if (pessoa.getIdUsuario().equals(id)) {
+                pessoa.setNomeInteresse(novosDados.getNomeInteresse());
+                pessoa.setCategoriaInteresse(novosDados.getCategoriaInteresse());
+                pessoa.setDescricao(novosDados.getDescricao());
+            }
+            return pessoa;
+        } return null;
+    }
 
 }
