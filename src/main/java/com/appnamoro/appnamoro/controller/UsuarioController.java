@@ -1,76 +1,77 @@
 package com.appnamoro.appnamoro.controller;
 
 import com.appnamoro.appnamoro.model.Usuario;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     private final List<Usuario> usuarios = new ArrayList<>();
+    private Long idSequence = 1L;
 
-    @GetMapping
-    public List<Usuario> mostrar() {
-        return usuarios;
-    }
-
-
+    // POST: Criar um novo usuário
     @PostMapping
-    public Usuario cadastrar(@RequestBody Usuario usuario) {
+    public ResponseEntity<Usuario> criar(@RequestBody Usuario usuario) {
+        usuario.setId_usuario(idSequence++);
         usuarios.add(usuario);
-        return usuario;
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
     }
 
-    @PutMapping("/{email}")
-    public Usuario atualizarTotal(@PathVariable String email, @RequestBody Usuario dadosParcias) {
-        for (Usuario usuario : usuarios) {
-
-            if (usuario.getEmail().equalsIgnoreCase(email)) {
-                Usuario usuarioAtualizado = null;
-                usuario.setApelido(usuarioAtualizado.getApelido());
-                usuario.setIdade(usuarioAtualizado.getIdade());
-                usuario.setSuperPoder(usuarioAtualizado.getSuperPoder());
-                usuario.setEmail(usuarioAtualizado.getEmail());
-                return usuario;
-            }
-        }
-        return null;
+    // GET: Listar todos os usuários
+    @GetMapping
+    public ResponseEntity<List<Usuario>> listarTodos() {
+        return ResponseEntity.ok(usuarios);
     }
 
+    // GET: Buscar usuário por ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> buscarPorId(@PathVariable Long id) {
+        Optional<Usuario> usuarioFound = usuarios.stream()
+                .filter(u -> u.getId_usuario().equals(id))
+                .findFirst();
 
-    @PatchMapping("/{email}")
-    public Usuario atualizarParcial(@PathVariable String email, @RequestBody Usuario dadosParciais) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.getEmail().equalsIgnoreCase(email)) {
-                if (dadosParciais.getApelido() != null) {
-                    usuario.setApelido(dadosParciais.getApelido());
-                }
-                if (dadosParciais.getIdade() != null) {
-                    usuario.setIdade(dadosParciais.getIdade());
-                }
-                if (dadosParciais.getSuperPoder() != null) {
-                    usuario.setSuperPoder(dadosParciais.getSuperPoder());
-                }
-                return usuario;
-            }
-        }
-        return null;
+        return usuarioFound.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{email}")
-    public String deletar(@PathVariable String email) {
-        for (int i = 0; i < usuarios.size(); i++) {
-            if (usuarios.get(i).getEmail().equalsIgnoreCase(email)) {
-                usuarios.remove(i);
-                return "Usuário " + email + " removido com sucesso!";
-            }
+    // PUT: Atualizar os dados de um usuário existente
+    @PutMapping("/{id}")
+    public ResponseEntity<Usuario> atualizar(@PathVariable Long id, @RequestBody Usuario dadosAtualizados) {
+        Optional<Usuario> usuarioOpt = usuarios.stream()
+                .filter(u -> u.getId_usuario().equals(id))
+                .findFirst();
+
+        if (usuarioOpt.isPresent()) {
+            Usuario usuarioExistente = usuarioOpt.get();
+            usuarioExistente.setNomeCompleto(dadosAtualizados.getNomeCompleto());
+            usuarioExistente.setDtNascimento(dadosAtualizados.getDtNascimento());
+            usuarioExistente.setIdade(dadosAtualizados.getIdade());
+            usuarioExistente.setEmail(dadosAtualizados.getEmail());
+            usuarioExistente.setGenero(dadosAtualizados.getGenero());
+            usuarioExistente.setBiografia(dadosAtualizados.getBiografia());
+            usuarioExistente.setCidade(dadosAtualizados.getCidade());
+            usuarioExistente.setFoto_perfil(dadosAtualizados.getFoto_perfil());
+
+            return ResponseEntity.ok(usuarioExistente);
         }
-        return "Usuário não encontrado.";
+
+        return ResponseEntity.notFound().build();
+    }
+
+    // DELETE: Remover um usuário por ID
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        boolean removido = usuarios.removeIf(u -> u.getId_usuario().equals(id));
+        if (removido) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }
-
-
-
-
