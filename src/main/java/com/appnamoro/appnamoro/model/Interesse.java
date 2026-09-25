@@ -1,3 +1,5 @@
+package com.appnamoro.appnamoro.model;
+
 public class Interesse {
 
     private Long idUsuario;
@@ -16,7 +18,7 @@ public class Interesse {
 
     @Override
     public String toString() {
-        return "Interesse{" +
+        return "com.appnamoro.appnamoro.model.Interesse{" +
                 "idUsuario=" + idUsuario +
                 ", nomeInteresse='" + nomeInteresse + '\'' +
                 ", categoriaInteresse='" + categoriaInteresse + '\'' +

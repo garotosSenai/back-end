@@ -1,6 +1,4 @@
-package com.appnamoro.appnamoro;
-
-import org.springframework.cglib.core.Local;
+package com.appnamoro.appnamoro.model;
 
 import java.time.LocalDate;
 

@@ -16,7 +16,6 @@ public class UsuarioController {
     private final List<Usuario> usuarios = new ArrayList<>();
     private Long idSequence = 1L;
 
-    // POST: Criar um novo usuário
     @PostMapping
     public ResponseEntity<Usuario> criar(@RequestBody Usuario usuario) {
         usuario.setId_usuario(idSequence++);
@@ -24,13 +23,13 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
     }
 
-    // GET: Listar todos os usuários
+
     @GetMapping
     public ResponseEntity<List<Usuario>> listarTodos() {
         return ResponseEntity.ok(usuarios);
     }
 
-    // GET: Buscar usuário por ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> buscarPorId(@PathVariable Long id) {
         Optional<Usuario> usuarioFound = usuarios.stream()
@@ -41,7 +40,6 @@ public class UsuarioController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // PUT: Atualizar os dados de um usuário existente
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> atualizar(@PathVariable Long id, @RequestBody Usuario dadosAtualizados) {
         Optional<Usuario> usuarioOpt = usuarios.stream()
@@ -65,7 +63,7 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
 
-    // DELETE: Remover um usuário por ID
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         boolean removido = usuarios.removeIf(u -> u.getId_usuario().equals(id));

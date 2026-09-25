@@ -1,7 +1,7 @@
 package com.appnamoro.appnamoro.controller;
 
 
-import com.appnamoro.appnamoro.Curtida;
+import com.appnamoro.appnamoro.model.Curtida;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

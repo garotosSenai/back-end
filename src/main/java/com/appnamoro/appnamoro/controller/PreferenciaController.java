@@ -24,4 +24,6 @@ public class PreferenciaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(preferencia);
     }
 
+
+
 }
