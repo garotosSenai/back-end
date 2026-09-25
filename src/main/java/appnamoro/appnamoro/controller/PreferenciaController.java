@@ -1,10 +1,10 @@
 package appnamoro.appnamoro.controller;
 
 import appnamoro.appnamoro.Preferencia;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +20,26 @@ public class PreferenciaController {
 
     //metodo POST (salvar)
     @PostMapping
-    public Preferencia salvarPreferencia (@RequestBody Preferencia novaPreferencia){
-        novaPreferencia.setIdUsuario(proximoId++);
+    public ResponseEntity <Preferencia> salvarPreferencia (@RequestBody Preferencia novaPreferencia){
+        novaPreferencia.setIdPreferencia(proximoId++);
         listaPreferencia.add(novaPreferencia);
-        return novaPreferencia;
+        return ResponseEntity.status(HttpStatus.CREATED).body(novaPreferencia);
     }
 
+    @GetMapping
+    public List<Preferencia> mostrarPreferencia (){
+        return listaPreferencia;
+    }
+
+    @GetMapping ("/usuario/{idUsuario}")
+    public Preferencia buscarPorIdUsuario (@PathVariable Long idUsuario){
+        for (Preferencia preferencia : listaPreferencia){
+            if (preferencia.getIdUsuario().equals(idUsuario)){
+                return preferencia;
+            }
+        }
+        return null;
+    }
+
+    @DeleteMapping
 }

@@ -1,4 +1,4 @@
-package appnamoro.appnamoro;
+package appnamoro.appnamoro.enuns;
 
 public enum Genero {
 

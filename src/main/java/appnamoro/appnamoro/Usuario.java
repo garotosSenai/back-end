@@ -1,5 +1,7 @@
 package appnamoro.appnamoro;
 
+import appnamoro.appnamoro.enuns.Genero;
+
 import java.time.LocalDate;
 
 public class Usuario {
