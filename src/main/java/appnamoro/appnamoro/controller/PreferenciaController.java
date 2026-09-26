@@ -2,7 +2,6 @@ package appnamoro.appnamoro.controller;
 
 import appnamoro.appnamoro.Preferencia;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,19 +26,50 @@ public class PreferenciaController {
     }
 
     @GetMapping
-    public List<Preferencia> mostrarPreferencia (){
-        return listaPreferencia;
+    public ResponseEntity<List<Preferencia>> mostrarPreferencia (){
+        return ResponseEntity.ok(listaPreferencia);
     }
 
     @GetMapping ("/usuario/{idUsuario}")
-    public Preferencia buscarPorIdUsuario (@PathVariable Long idUsuario){
+    public ResponseEntity<Preferencia> buscarPorId (@PathVariable Long idUsuario){
         for (Preferencia preferencia : listaPreferencia){
             if (preferencia.getIdUsuario().equals(idUsuario)){
-                return preferencia;
+                return ResponseEntity.ok(preferencia);
             }
         }
-        return null;
+        return ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarPreferencia (@PathVariable Long id) {
+        for (Preferencia preferencia : listaPreferencia){
+            if (preferencia.getIdPreferencia().equals(id)) {
+                listaPreferencia.remove(preferencia);
+                return ResponseEntity.noContent().build();
+            }
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Preferencia> atualizarPreferencia (@PathVariable Long id, @RequestBody Preferencia preferenciaAtualizada){
+        for (Preferencia preferencia : listaPreferencia){
+            if (preferencia.getIdPreferencia().equals(id)){
+                preferencia.setGenero(preferenciaAtualizada.getGenero());
+                preferencia.setIdadeMaxima(preferenciaAtualizada.getIdadeMaxima());
+                preferencia.setIdadeMinima(preferenciaAtualizada.getIdadeMinima());
+                preferencia.setDistanciaMaxima(preferenciaAtualizada.getDistanciaMaxima());
+                preferencia.setAlturaMaxima(preferenciaAtualizada.getAlturaMaxima());
+                preferencia.setAlturaMinima(preferenciaAtualizada.getAlturaMinima());
+                preferencia.setSigno(preferenciaAtualizada.getSigno());
+                preferencia.setEscolaridade(preferenciaAtualizada.getEscolaridade());
+                preferencia.setEstadoProfissional(preferenciaAtualizada.getEstadoProfissional());
+
+                return ResponseEntity.ok(preferencia);
+            }
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+
 }
