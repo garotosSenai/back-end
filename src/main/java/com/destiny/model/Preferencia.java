@@ -1,4 +1,137 @@
 package com.destiny.model;
 
+import com.destiny.model.enums.Escolaridade;
+import com.destiny.model.enums.EstadoProfissional;
+import com.destiny.model.enums.Genero;
+import com.destiny.model.enums.Signo;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Preferencia {
+
+    private Long idPreferencia;
+    private Usuario usuario;
+    private Set<Genero> generosInteresse = new HashSet<>();
+    private int idadeMaxima;
+    private int idadeMinima;
+    private double distanciaMaximaKm;
+    private double distanciaMinimaKm;
+    private int alturaMinimaCm;
+    private int alturaMaximaCm;
+    private Set<Signo> signos = new HashSet<>();
+    private Set<Escolaridade> escolaridades = new HashSet<>();
+    private Set<EstadoProfissional> estadoProfissionals = new HashSet<>();
+
+    public Preferencia (){}
+
+    public Preferencia(Usuario usuario, Set<Genero> generosInteresse, int idadeMaxima, int idadeMinima, double distanciaMaximaKm, double distanciaMinimaKm, int alturaMinimaCm, int alturaMaximaCm, Set<Signo> signos, Set<Escolaridade> escolaridades, Set<EstadoProfissional> estadoProfissionals) {
+        this.usuario = usuario;
+        this.generosInteresse = generosInteresse;
+        this.idadeMaxima = idadeMaxima;
+        this.idadeMinima = idadeMinima;
+        this.distanciaMaximaKm = distanciaMaximaKm;
+        this.distanciaMinimaKm = distanciaMinimaKm;
+        this.alturaMinimaCm = alturaMinimaCm;
+        this.alturaMaximaCm = alturaMaximaCm;
+        this.signos = signos;
+        this.escolaridades = escolaridades;
+        this.estadoProfissionals = estadoProfissionals;
+    }
+
+    public Long getIdPreferencia() {
+        return idPreferencia;
+    }
+
+    public void setIdPreferencia(Long idPreferencia) {
+        this.idPreferencia = idPreferencia;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Set<Genero> getGenerosInteresse() {
+        return generosInteresse;
+    }
+
+    public void setGenerosInteresse(Set<Genero> generosInteresse) {
+        this.generosInteresse = generosInteresse;
+    }
+
+    public int getIdadeMaxima() {
+        return idadeMaxima;
+    }
+
+    public void setIdadeMaxima(int idadeMaxima) {
+        this.idadeMaxima = idadeMaxima;
+    }
+
+    public int getIdadeMinima() {
+        return idadeMinima;
+    }
+
+    public void setIdadeMinima(int idadeMinima) {
+        this.idadeMinima = idadeMinima;
+    }
+
+    public double getDistanciaMaximaKm() {
+        return distanciaMaximaKm;
+    }
+
+    public void setDistanciaMaximaKm(double distanciaMaximaKm) {
+        this.distanciaMaximaKm = distanciaMaximaKm;
+    }
+
+    public double getDistanciaMinimaKm() {
+        return distanciaMinimaKm;
+    }
+
+    public void setDistanciaMinimaKm(double distanciaMinimaKm) {
+        this.distanciaMinimaKm = distanciaMinimaKm;
+    }
+
+    public int getAlturaMinimaCm() {
+        return alturaMinimaCm;
+    }
+
+    public void setAlturaMinimaCm(int alturaMinimaCm) {
+        this.alturaMinimaCm = alturaMinimaCm;
+    }
+
+    public int getAlturaMaximaCm() {
+        return alturaMaximaCm;
+    }
+
+    public void setAlturaMaximaCm(int alturaMaximaCm) {
+        this.alturaMaximaCm = alturaMaximaCm;
+    }
+
+    public Set<Signo> getSignos() {
+        return signos;
+    }
+
+    public void setSignos(Set<Signo> signos) {
+        this.signos = signos;
+    }
+
+    public Set<Escolaridade> getEscolaridades() {
+        return escolaridades;
+    }
+
+    public void setEscolaridades(Set<Escolaridade> escolaridades) {
+        this.escolaridades = escolaridades;
+    }
+
+    public Set<EstadoProfissional> getEstadoProfissionals() {
+        return estadoProfissionals;
+    }
+
+    public void setEstadoProfissionals(Set<EstadoProfissional> estadoProfissionals) {
+        this.estadoProfissionals = estadoProfissionals;
+    }
 }
