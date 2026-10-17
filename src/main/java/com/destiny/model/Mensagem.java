@@ -1,6 +1,5 @@
 package com.destiny.model;
 
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -15,11 +14,11 @@ public class Mensagem {
 
     public Mensagem (){}
 
-    public Mensagem(Match match, Usuario remetente, String conteudo, LocalDateTime enviadaEm, LocalDateTime visualizadaEm) {
+    public Mensagem(Match match, Usuario remetente, String conteudo) {
         this.match = match;
         this.remetente = remetente;
         this.conteudo = conteudo;
-        this.enviadaEm = enviadaEm;
+        this.enviadaEm = LocalDateTime.now();
         this.visualizadaEm = null;
     }
 

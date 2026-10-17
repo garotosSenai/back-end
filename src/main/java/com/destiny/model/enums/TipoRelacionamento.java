@@ -1,6 +1,6 @@
 package com.destiny.model.enums;
 
-public enum TiposRelacionamento {
+public enum TipoRelacionamento {
     RELACIONAMENTO_SERIO,
     RELACIONAMENTO_CASUAL,
     AMIZADE,

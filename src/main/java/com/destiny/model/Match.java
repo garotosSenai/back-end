@@ -13,11 +13,11 @@ public class Match {
 
     public Match (){}
 
-    public Match(Usuario usuario1, Usuario usuario2, LocalDateTime criadoEm, boolean ativo) {
+    public Match(Usuario usuario1, Usuario usuario2) {
         this.usuario1 = usuario1;
         this.usuario2 = usuario2;
         this.criadoEm = LocalDateTime.now();
-        this.ativo = ativo;
+        this.ativo = true;
     }
 
     public UUID getIdMatch() {

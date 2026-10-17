@@ -8,18 +8,17 @@ import java.util.UUID;
 public class Interacao {
 
     private UUID idInteracao;
-    private Usuario origemInteracao;
-    private Usuario destinoInteracao;
-    private TipoInteracao tipoInteracao;
+    private Usuario origem;
+    private Usuario destino;
+    private TipoInteracao tipo;
     private LocalDateTime criadoEm;
 
     public Interacao (){}
 
-    public Interacao(UUID idInteracao, Usuario origemInteracao, Usuario destinoInteracao, TipoInteracao tipoInteracao, LocalDateTime criadoEm) {
-        this.idInteracao = idInteracao;
-        this.origemInteracao = origemInteracao;
-        this.destinoInteracao = destinoInteracao;
-        this.tipoInteracao = tipoInteracao;
+    public Interacao(Usuario origem, Usuario destino, TipoInteracao tipo) {
+        this.origem = origem;
+        this.destino = destino;
+        this.tipo = tipo;
         this.criadoEm = LocalDateTime.now();
     }
 
@@ -31,28 +30,28 @@ public class Interacao {
         this.idInteracao = idInteracao;
     }
 
-    public Usuario getOrigemInteracao() {
-        return origemInteracao;
+    public Usuario getOrigem() {
+        return origem;
     }
 
-    public void setOrigemInteracao(Usuario origemInteracao) {
-        this.origemInteracao = origemInteracao;
+    public void setOrigem(Usuario origem) {
+        this.origem = origem;
     }
 
-    public Usuario getDestinoInteracao() {
-        return destinoInteracao;
+    public Usuario getDestino() {
+        return destino;
     }
 
-    public void setDestinoInteracao(Usuario destinoInteracao) {
-        this.destinoInteracao = destinoInteracao;
+    public void setDestino(Usuario destino) {
+        this.destino = destino;
     }
 
-    public TipoInteracao getTipoInteracao() {
-        return tipoInteracao;
+    public TipoInteracao getTipo() {
+        return tipo;
     }
 
-    public void setTipoInteracao(TipoInteracao tipoInteracao) {
-        this.tipoInteracao = tipoInteracao;
+    public void setTipo(TipoInteracao tipo) {
+        this.tipo = tipo;
     }
 
     public LocalDateTime getCriadoEm() {

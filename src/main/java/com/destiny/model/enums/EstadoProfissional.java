@@ -4,5 +4,7 @@ public enum EstadoProfissional {
     ESTUDANTE,
     EMPREGADO,
     AUTONOMO,
-    EMPREENDEDOR
+    EMPREENDEDOR,
+    EM_TRANSICAO,
+    OUTRO
 }

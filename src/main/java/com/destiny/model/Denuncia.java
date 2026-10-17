@@ -3,37 +3,36 @@ package com.destiny.model;
 import com.destiny.model.enums.MotivoDenuncia;
 import com.destiny.model.enums.StatusDenuncia;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Denuncia {
 
-    private UUID IdDenuncia;
+    private UUID idDenuncia;
     private Usuario denunciante;
     private Usuario denunciado;
-    private MotivoDenuncia motivoDenuncia;
+    private MotivoDenuncia motivo;
     private String descricao;
-    private LocalDateTime criadaEm;
-    private StatusDenuncia statusDenuncia;
+    private LocalDateTime criadoEm;
+    private StatusDenuncia status;
 
     public Denuncia (){}
 
-    public Denuncia(Usuario denunciante, Usuario denunciado, MotivoDenuncia motivoDenuncia, String descricao, LocalDateTime criadaEm, StatusDenuncia statusDenuncia) {
+    public Denuncia(Usuario denunciante, Usuario denunciado, MotivoDenuncia motivo, String descricao) {
         this.denunciante = denunciante;
         this.denunciado = denunciado;
-        this.motivoDenuncia = motivoDenuncia;
+        this.motivo = motivo;
         this.descricao = descricao;
-        this.criadaEm = LocalDateTime.now();
-        this.statusDenuncia = StatusDenuncia.PENDENTE;
+        this.criadoEm = LocalDateTime.now();
+        this.status = StatusDenuncia.PENDENTE;
     }
 
     public UUID getIdDenuncia() {
-        return IdDenuncia;
+        return idDenuncia;
     }
 
     public void setIdDenuncia(UUID idDenuncia) {
-        IdDenuncia = idDenuncia;
+        this.idDenuncia = idDenuncia;
     }
 
     public Usuario getDenunciante() {
@@ -52,12 +51,12 @@ public class Denuncia {
         this.denunciado = denunciado;
     }
 
-    public MotivoDenuncia getMotivoDenuncia() {
-        return motivoDenuncia;
+    public MotivoDenuncia getMotivo() {
+        return motivo;
     }
 
-    public void setMotivoDenuncia(MotivoDenuncia motivoDenuncia) {
-        this.motivoDenuncia = motivoDenuncia;
+    public void setMotivo(MotivoDenuncia motivo) {
+        this.motivo = motivo;
     }
 
     public String getDescricao() {
@@ -68,19 +67,19 @@ public class Denuncia {
         this.descricao = descricao;
     }
 
-    public LocalDateTime getCriadaEm() {
-        return criadaEm;
+    public LocalDateTime getCriadoEm() {
+        return criadoEm;
     }
 
-    public void setCriadaEm(LocalDateTime criadaEm) {
-        this.criadaEm = criadaEm;
+    public void setCriadoEm(LocalDateTime criadoEm) {
+        this.criadoEm = criadoEm;
     }
 
-    public StatusDenuncia getStatusDenuncia() {
-        return statusDenuncia;
+    public StatusDenuncia getStatus() {
+        return status;
     }
 
-    public void setStatusDenuncia(StatusDenuncia statusDenuncia) {
-        this.statusDenuncia = statusDenuncia;
+    public void setStatus(StatusDenuncia status) {
+        this.status = status;
     }
 }

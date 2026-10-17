@@ -1,7 +1,5 @@
 package com.destiny.model;
 
-import com.destiny.model.enums.Genero;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -12,17 +10,17 @@ public class Usuario {
     private String email;
     private String senha;
     private LocalDate dtNascimento;
-    private LocalDateTime dtCadastro;
+    private LocalDateTime criadoEm;
     private boolean ativo;
 
     public Usuario (){}
 
-    public Usuario(String email, String senha, LocalDate dtNascimento, LocalDateTime dtCadastro, boolean ativo) {
+    public Usuario(String email, String senha, LocalDate dtNascimento) {
         this.email = email;
         this.senha = senha;
         this.dtNascimento = dtNascimento;
-        this.dtCadastro = LocalDateTime.now();
-        this.ativo = ativo;
+        this.criadoEm = LocalDateTime.now();
+        this.ativo = true;
     }
 
     public UUID getIdUsuario() {
@@ -57,12 +55,12 @@ public class Usuario {
         this.dtNascimento = dtNascimento;
     }
 
-    public LocalDateTime getDtCadastro() {
-        return dtCadastro;
+    public LocalDateTime getCriadoEm() {
+        return criadoEm;
     }
 
-    public void setDtCadastro(LocalDateTime dtCadastro) {
-        this.dtCadastro = dtCadastro;
+    public void setCriadoEm(LocalDateTime criadoEm) {
+        this.criadoEm = criadoEm;
     }
 
     public boolean isAtivo() {

@@ -10,7 +10,9 @@ public class Foto {
     private int ordemFotos;
     private LocalDateTime criadoEm;
 
-    public Foto(String url, int ordemFotos, LocalDateTime criadoEm) {
+    public Foto (){}
+
+    public Foto(String url, int ordemFotos) {
         this.url = url;
         this.ordemFotos = ordemFotos;
         this.criadoEm = LocalDateTime.now();

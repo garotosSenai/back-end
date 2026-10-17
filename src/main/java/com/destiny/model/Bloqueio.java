@@ -12,7 +12,7 @@ public class Bloqueio {
 
     public Bloqueio (){}
 
-    public Bloqueio(Usuario bloqueador, Usuario bloqueado, LocalDateTime criadoEm) {
+    public Bloqueio(Usuario bloqueador, Usuario bloqueado) {
         this.bloqueador = bloqueador;
         this.bloqueado = bloqueado;
         this.criadoEm = LocalDateTime.now();

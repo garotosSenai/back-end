@@ -10,31 +10,21 @@ public class PreferenciaBusca {
 
     private UUID idPreferencia;
     private Usuario usuario;
-    private Set<Genero> generosInteresse = new HashSet<>();
-    private int idadeMinima;
-    private int idadeMaxima;
-    private double distanciaMaximaKm;
-    private int alturaMinimaCm;
-    private int alturaMaximaCm;
+    private Set<CategoriaGenero> generosInteresse = new HashSet<>();
+    private Integer idadeMinima = 18;
+    private Integer idadeMaxima  = 99;
+    private Double distanciaMaximaKm = 50.0;
+    private Integer alturaMinimaCm;
+    private Integer alturaMaximaCm;
     private Set<Signo> signos = new HashSet<>();
     private Set<Escolaridade> escolaridades = new HashSet<>();
-    private Set<EstadoProfissional> estadoProfissionals = new HashSet<>();
-    private Set<TiposRelacionamento> tiposRelacionamento = new HashSet<>();
+    private Set<EstadoProfissional> estadosProfissionais = new HashSet<>();
+    private Set<TipoRelacionamento> tiposRelacionamento = new HashSet<>();
 
     public PreferenciaBusca(){}
 
-    public PreferenciaBusca(Usuario usuario, Set<Genero> generosInteresse, int idadeMinima, int idadeMaxima, double distanciaMaximaKm, int alturaMinimaCm, int alturaMaximaCm, Set<Signo> signos, Set<Escolaridade> escolaridades, Set<EstadoProfissional> estadoProfissionals, Set<TiposRelacionamento> tiposRelacionamento) {
+    public PreferenciaBusca(Usuario usuario) {
         this.usuario = usuario;
-        this.generosInteresse = generosInteresse;
-        this.idadeMinima = idadeMinima;
-        this.idadeMaxima = idadeMaxima;
-        this.distanciaMaximaKm = distanciaMaximaKm;
-        this.alturaMinimaCm = alturaMinimaCm;
-        this.alturaMaximaCm = alturaMaximaCm;
-        this.signos = signos;
-        this.escolaridades = escolaridades;
-        this.estadoProfissionals = estadoProfissionals;
-        this.tiposRelacionamento = tiposRelacionamento;
     }
 
     public UUID getIdPreferencia() {
@@ -53,51 +43,51 @@ public class PreferenciaBusca {
         this.usuario = usuario;
     }
 
-    public Set<Genero> getGenerosInteresse() {
+    public Set<CategoriaGenero> getGenerosInteresse() {
         return generosInteresse;
     }
 
-    public void setGenerosInteresse(Set<Genero> generosInteresse) {
+    public void setGenerosInteresse(Set<CategoriaGenero> generosInteresse) {
         this.generosInteresse = generosInteresse;
     }
 
-    public int getIdadeMaxima() {
-        return idadeMaxima;
-    }
-
-    public void setIdadeMaxima(int idadeMaxima) {
-        this.idadeMaxima = idadeMaxima;
-    }
-
-    public int getIdadeMinima() {
+    public Integer getIdadeMinima() {
         return idadeMinima;
     }
 
-    public void setIdadeMinima(int idadeMinima) {
+    public void setIdadeMinima(Integer idadeMinima) {
         this.idadeMinima = idadeMinima;
     }
 
-    public double getDistanciaMaximaKm() {
+    public Integer getIdadeMaxima() {
+        return idadeMaxima;
+    }
+
+    public void setIdadeMaxima(Integer idadeMaxima) {
+        this.idadeMaxima = idadeMaxima;
+    }
+
+    public Double getDistanciaMaximaKm() {
         return distanciaMaximaKm;
     }
 
-    public void setDistanciaMaximaKm(double distanciaMaximaKm) {
+    public void setDistanciaMaximaKm(Double distanciaMaximaKm) {
         this.distanciaMaximaKm = distanciaMaximaKm;
     }
 
-    public int getAlturaMinimaCm() {
+    public Integer getAlturaMinimaCm() {
         return alturaMinimaCm;
     }
 
-    public void setAlturaMinimaCm(int alturaMinimaCm) {
+    public void setAlturaMinimaCm(Integer alturaMinimaCm) {
         this.alturaMinimaCm = alturaMinimaCm;
     }
 
-    public int getAlturaMaximaCm() {
+    public Integer getAlturaMaximaCm() {
         return alturaMaximaCm;
     }
 
-    public void setAlturaMaximaCm(int alturaMaximaCm) {
+    public void setAlturaMaximaCm(Integer alturaMaximaCm) {
         this.alturaMaximaCm = alturaMaximaCm;
     }
 
@@ -117,19 +107,19 @@ public class PreferenciaBusca {
         this.escolaridades = escolaridades;
     }
 
-    public Set<EstadoProfissional> getEstadoProfissionals() {
-        return estadoProfissionals;
+    public Set<EstadoProfissional> getEstadosProfissionais() {
+        return estadosProfissionais;
     }
 
-    public void setEstadoProfissionals(Set<EstadoProfissional> estadoProfissionals) {
-        this.estadoProfissionals = estadoProfissionals;
+    public void setEstadosProfissionais(Set<EstadoProfissional> estadosProfissionais) {
+        this.estadosProfissionais = estadosProfissionais;
     }
 
-    public Set<TiposRelacionamento> getTiposRelacionamento() {
+    public Set<TipoRelacionamento> getTiposRelacionamento() {
         return tiposRelacionamento;
     }
 
-    public void setTiposRelacionamento(Set<TiposRelacionamento> tiposRelacionamento) {
+    public void setTiposRelacionamento(Set<TipoRelacionamento> tiposRelacionamento) {
         this.tiposRelacionamento = tiposRelacionamento;
     }
 }

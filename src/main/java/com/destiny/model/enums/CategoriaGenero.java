@@ -1,8 +1,7 @@
 package com.destiny.model.enums;
 
-public enum Genero {
-    MASCULINO,
-    FEMININO,
+public enum CategoriaGenero {
+    HOMEM,
+    MULHER,
     NAO_BINARIO,
-    OUTRO
 }

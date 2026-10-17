@@ -9,32 +9,28 @@ public class Perfil {
     private UUID idPerfil;
     private Usuario usuario;
     private String nome;
-    private Genero genero;
+    private CategoriaGenero genero;
+    private IdentidadeGenero identidadeGenero;
+    private boolean mostrarIdentidadeGenero = false;
     private String bio;
     private Localizacao localizacao;
     private List<Foto> fotos = new ArrayList<>();
-    private int alturaCm;
+    private Integer alturaCm;
     private Signo signo;
     private Escolaridade escolaridade;
     private EstadoProfissional estadoProfissional;
-    private Set<OrientacaoSexual> orientacaoSexual = new HashSet<>();
-    private boolean mostrarSexualidade = false;
+    private Set<OrientacaoSexual> orientacoes = new HashSet<>();
+    private boolean mostrarOrientacao = false;
+    private Set<Hobby> hobbies = new HashSet<>();
+    private Set<TipoRelacionamento> buscandoTipoRelacionamento = new HashSet<>();
 
     public Perfil (){}
 
-    public Perfil(Usuario usuario, String nome, Genero genero, String bio, Localizacao localizacao, List<Foto> fotos, int alturaCm, Signo signo, Escolaridade escolaridade, EstadoProfissional estadoProfissional, Set<OrientacaoSexual> orientacaoSexual, boolean mostrarSexualidade) {
+    public Perfil(Usuario usuario, String nome, CategoriaGenero genero, Localizacao localizacao) {
         this.usuario = usuario;
         this.nome = nome;
         this.genero = genero;
-        this.bio = bio;
         this.localizacao = localizacao;
-        this.fotos = fotos;
-        this.alturaCm = alturaCm;
-        this.signo = signo;
-        this.escolaridade = escolaridade;
-        this.estadoProfissional = estadoProfissional;
-        this.orientacaoSexual = orientacaoSexual;
-        this.mostrarSexualidade = mostrarSexualidade;
     }
 
     public UUID getIdPerfil() {
@@ -61,11 +57,11 @@ public class Perfil {
         this.nome = nome;
     }
 
-    public Genero getGenero() {
+    public CategoriaGenero getGenero() {
         return genero;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGenero(CategoriaGenero genero) {
         this.genero = genero;
     }
 
@@ -93,11 +89,11 @@ public class Perfil {
         this.fotos = fotos;
     }
 
-    public int getAlturaCm() {
+    public Integer getAlturaCm() {
         return alturaCm;
     }
 
-    public void setAlturaCm(int alturaCm) {
+    public void setAlturaCm(Integer alturaCm) {
         this.alturaCm = alturaCm;
     }
 
@@ -125,19 +121,36 @@ public class Perfil {
         this.estadoProfissional = estadoProfissional;
     }
 
-    public Set<OrientacaoSexual> getOrientacaoSexual() {
-        return orientacaoSexual;
+
+    public Set<OrientacaoSexual> getOrientacoes() {
+        return orientacoes;
     }
 
-    public void setOrientacaoSexual(Set<OrientacaoSexual> orientacaoSexual) {
-        this.orientacaoSexual = orientacaoSexual;
+    public void setOrientacoes(Set<OrientacaoSexual> orientacoes) {
+        this.orientacoes = orientacoes;
     }
 
-    public boolean isMostrarSexualidade() {
-        return mostrarSexualidade;
+    public boolean isMostrarOrientacao() {
+        return mostrarOrientacao;
     }
 
-    public void setMostrarSexualidade(boolean mostrarSexualidade) {
-        this.mostrarSexualidade = mostrarSexualidade;
+    public void setMostrarOrientacao(boolean mostrarOrientacao) {
+        this.mostrarOrientacao = mostrarOrientacao;
+    }
+
+    public Set<Hobby> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(Set<Hobby> hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public Set<TipoRelacionamento> getBuscandoTipoRelacionamento() {
+        return buscandoTipoRelacionamento;
+    }
+
+    public void setBuscandoTipoRelacionamento(Set<TipoRelacionamento> buscandoTipoRelacionamento) {
+        this.buscandoTipoRelacionamento = buscandoTipoRelacionamento;
     }
 }
