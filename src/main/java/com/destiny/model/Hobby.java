@@ -22,6 +22,7 @@ public class Hobby {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (!(o instanceof Hobby hobby)) return false;
         return idHobby != null && idHobby.equals(hobby.idHobby);
     }

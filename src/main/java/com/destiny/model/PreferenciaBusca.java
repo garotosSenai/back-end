@@ -12,14 +12,14 @@ public class PreferenciaBusca {
     private Usuario usuario;
     private Set<CategoriaGenero> generosInteresse = new HashSet<>();
     private Integer idadeMinima = 18;
-    private Integer idadeMaxima  = 99;
+    private Integer idadeMaxima = 99;
     private Double distanciaMaximaKm = 50.0;
     private Integer alturaMinimaCm;
     private Integer alturaMaximaCm;
     private Set<Signo> signos = new HashSet<>();
     private Set<Escolaridade> escolaridades = new HashSet<>();
     private Set<EstadoProfissional> estadosProfissionais = new HashSet<>();
-    private Set<TipoRelacionamento> tiposRelacionamento = new HashSet<>();
+    private Set<TipoRelacionamento> tiposRelacionamentos = new HashSet<>();
 
     public PreferenciaBusca(){}
 
@@ -115,11 +115,11 @@ public class PreferenciaBusca {
         this.estadosProfissionais = estadosProfissionais;
     }
 
-    public Set<TipoRelacionamento> getTiposRelacionamento() {
-        return tiposRelacionamento;
+    public Set<TipoRelacionamento> getTiposRelacionamentos() {
+        return tiposRelacionamentos;
     }
 
-    public void setTiposRelacionamento(Set<TipoRelacionamento> tiposRelacionamento) {
-        this.tiposRelacionamento = tiposRelacionamento;
+    public void setTiposRelacionamentos(Set<TipoRelacionamento> tiposRelacionamentos) {
+        this.tiposRelacionamentos = tiposRelacionamentos;
     }
 }

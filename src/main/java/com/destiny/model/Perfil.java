@@ -9,7 +9,7 @@ public class Perfil {
     private UUID idPerfil;
     private Usuario usuario;
     private String nome;
-    private CategoriaGenero genero;
+    private CategoriaGenero categoriaGenero;
     private IdentidadeGenero identidadeGenero;
     private boolean mostrarIdentidadeGenero = false;
     private String bio;
@@ -22,14 +22,14 @@ public class Perfil {
     private Set<OrientacaoSexual> orientacoes = new HashSet<>();
     private boolean mostrarOrientacao = false;
     private Set<Hobby> hobbies = new HashSet<>();
-    private Set<TipoRelacionamento> buscandoTipoRelacionamento = new HashSet<>();
+    private Set<TipoRelacionamento> tiposRelacionamentos = new HashSet<>();
 
     public Perfil (){}
 
-    public Perfil(Usuario usuario, String nome, CategoriaGenero genero, Localizacao localizacao) {
+    public Perfil(Usuario usuario, String nome, CategoriaGenero categoriaGenero, Localizacao localizacao) {
         this.usuario = usuario;
         this.nome = nome;
-        this.genero = genero;
+        this.categoriaGenero = categoriaGenero;
         this.localizacao = localizacao;
     }
 
@@ -57,12 +57,12 @@ public class Perfil {
         this.nome = nome;
     }
 
-    public CategoriaGenero getGenero() {
-        return genero;
+    public CategoriaGenero getCategoriaGenero() {
+        return categoriaGenero;
     }
 
-    public void setGenero(CategoriaGenero genero) {
-        this.genero = genero;
+    public void setCategoriaGenero(CategoriaGenero categoriaGenero) {
+        this.categoriaGenero = categoriaGenero;
     }
 
     public String getBio() {
@@ -146,12 +146,12 @@ public class Perfil {
         this.hobbies = hobbies;
     }
 
-    public Set<TipoRelacionamento> getBuscandoTipoRelacionamento() {
-        return buscandoTipoRelacionamento;
+    public Set<TipoRelacionamento> getTiposRelacionamentos() {
+        return tiposRelacionamentos;
     }
 
-    public void setBuscandoTipoRelacionamento(Set<TipoRelacionamento> buscandoTipoRelacionamento) {
-        this.buscandoTipoRelacionamento = buscandoTipoRelacionamento;
+    public void setTiposRelacionamentos(Set<TipoRelacionamento> tiposRelacionamentos) {
+        this.tiposRelacionamentos = tiposRelacionamentos;
     }
 
     public IdentidadeGenero getIdentidadeGenero() {

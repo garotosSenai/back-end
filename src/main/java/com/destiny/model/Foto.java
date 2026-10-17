@@ -7,14 +7,14 @@ public class Foto {
 
     private UUID idFoto;
     private String url;
-    private int ordemFotos;
+    private int ordem;
     private LocalDateTime criadoEm;
 
     public Foto (){}
 
-    public Foto(String url, int ordemFotos) {
+    public Foto(String url, int ordem) {
         this.url = url;
-        this.ordemFotos = ordemFotos;
+        this.ordem = ordem;
         this.criadoEm = LocalDateTime.now();
     }
 
@@ -34,12 +34,12 @@ public class Foto {
         this.url = url;
     }
 
-    public int getOrdemFotos() {
-        return ordemFotos;
+    public int getOrdem() {
+        return ordem;
     }
 
-    public void setOrdemFotos(int ordemFotos) {
-        this.ordemFotos = ordemFotos;
+    public void setOrdem(int ordem) {
+        this.ordem = ordem;
     }
 
     public LocalDateTime getCriadoEm() {

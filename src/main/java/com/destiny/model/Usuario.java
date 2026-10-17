@@ -10,22 +10,23 @@ public class Usuario {
     private UUID idUsuario;
     private String email;
     private String senha;
-    private LocalDate dtNascimento;
+    private LocalDate dataNascimento;
     private LocalDateTime criadoEm;
     private boolean ativo;
 
     public Usuario (){}
 
-    public Usuario(String email, String senha, LocalDate dtNascimento) {
+    public Usuario(String email, String senha, LocalDate dataNascimento) {
         this.email = email;
         this.senha = senha;
-        this.dtNascimento = dtNascimento;
+        this.dataNascimento = dataNascimento;
         this.criadoEm = LocalDateTime.now();
         this.ativo = true;
     }
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (!(o instanceof Usuario usuario)) return false;
         return idUsuario != null && idUsuario.equals(usuario.idUsuario);
     }
@@ -59,12 +60,12 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public LocalDate getDtNascimento() {
-        return dtNascimento;
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDtNascimento(LocalDate dtNascimento) {
-        this.dtNascimento = dtNascimento;
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public LocalDateTime getCriadoEm() {
