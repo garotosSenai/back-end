@@ -7,31 +7,30 @@ import com.destiny.model.enums.Signo;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
-public class Preferencia {
+public class PreferenciaBusca {
 
-    private Long idPreferencia;
+    private UUID idPreferencia;
     private Usuario usuario;
     private Set<Genero> generosInteresse = new HashSet<>();
-    private int idadeMaxima;
     private int idadeMinima;
+    private int idadeMaxima;
     private double distanciaMaximaKm;
-    private double distanciaMinimaKm;
     private int alturaMinimaCm;
     private int alturaMaximaCm;
     private Set<Signo> signos = new HashSet<>();
     private Set<Escolaridade> escolaridades = new HashSet<>();
     private Set<EstadoProfissional> estadoProfissionals = new HashSet<>();
 
-    public Preferencia (){}
+    public PreferenciaBusca(){}
 
-    public Preferencia(Usuario usuario, Set<Genero> generosInteresse, int idadeMaxima, int idadeMinima, double distanciaMaximaKm, double distanciaMinimaKm, int alturaMinimaCm, int alturaMaximaCm, Set<Signo> signos, Set<Escolaridade> escolaridades, Set<EstadoProfissional> estadoProfissionals) {
+    public PreferenciaBusca(Usuario usuario, Set<Genero> generosInteresse, int idadeMinima, int idadeMaxima, double distanciaMaximaKm, int alturaMinimaCm, int alturaMaximaCm, Set<Signo> signos, Set<Escolaridade> escolaridades, Set<EstadoProfissional> estadoProfissionals) {
         this.usuario = usuario;
         this.generosInteresse = generosInteresse;
-        this.idadeMaxima = idadeMaxima;
         this.idadeMinima = idadeMinima;
+        this.idadeMaxima = idadeMaxima;
         this.distanciaMaximaKm = distanciaMaximaKm;
-        this.distanciaMinimaKm = distanciaMinimaKm;
         this.alturaMinimaCm = alturaMinimaCm;
         this.alturaMaximaCm = alturaMaximaCm;
         this.signos = signos;
@@ -39,11 +38,11 @@ public class Preferencia {
         this.estadoProfissionals = estadoProfissionals;
     }
 
-    public Long getIdPreferencia() {
+    public UUID getIdPreferencia() {
         return idPreferencia;
     }
 
-    public void setIdPreferencia(Long idPreferencia) {
+    public void setIdPreferencia(UUID idPreferencia) {
         this.idPreferencia = idPreferencia;
     }
 
@@ -85,14 +84,6 @@ public class Preferencia {
 
     public void setDistanciaMaximaKm(double distanciaMaximaKm) {
         this.distanciaMaximaKm = distanciaMaximaKm;
-    }
-
-    public double getDistanciaMinimaKm() {
-        return distanciaMinimaKm;
-    }
-
-    public void setDistanciaMinimaKm(double distanciaMinimaKm) {
-        this.distanciaMinimaKm = distanciaMinimaKm;
     }
 
     public int getAlturaMinimaCm() {
