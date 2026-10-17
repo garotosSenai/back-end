@@ -1,6 +1,6 @@
 package com.destiny.model.enums;
 
-public enum CategoriaInteresse {
+public enum CategoriaHobby {
 
     ESPORTES,
     MUSICA,
