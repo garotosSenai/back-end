@@ -19,7 +19,6 @@ public class Mensagem {
         this.remetente = remetente;
         this.conteudo = conteudo;
         this.enviadaEm = LocalDateTime.now();
-        this.visualizadaEm = visualizadaEm;
     }
 
     public UUID getIdMensagem() {
