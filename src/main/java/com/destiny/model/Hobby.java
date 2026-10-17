@@ -1,30 +1,30 @@
 package com.destiny.model;
 
-import com.destiny.model.enums.CategoriaInteresse;
+import com.destiny.model.enums.CategoriaHobby;
 
 import java.util.UUID;
 
-public class Interesse {
+public class Hobby {
 
-    private UUID idInteresse;
+    private UUID idHobby;
     private String nome;
-    private CategoriaInteresse categoria;
+    private CategoriaHobby categoria;
     private String descricao;
 
-    public Interesse(){}
+    public Hobby(){}
 
-    public Interesse(String nome, CategoriaInteresse categoria, String descricao) {
+    public Hobby(String nome, CategoriaHobby categoria, String descricao) {
         this.nome = nome;
         this.categoria = categoria;
         this.descricao = descricao;
     }
 
-    public UUID getIdInteresse() {
-        return idInteresse;
+    public UUID getIdHobby() {
+        return idHobby;
     }
 
-    public void setIdInteresse(UUID idInteresse) {
-        this.idInteresse = idInteresse;
+    public void setIdHobby(UUID idHobby) {
+        this.idHobby = idHobby;
     }
 
     public String getNome() {
@@ -35,11 +35,11 @@ public class Interesse {
         this.nome = nome;
     }
 
-    public CategoriaInteresse getCategoria() {
+    public CategoriaHobby getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaInteresse categoria) {
+    public void setCategoria(CategoriaHobby categoria) {
         this.categoria = categoria;
     }
 
