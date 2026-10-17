@@ -1,9 +1,6 @@
 package com.destiny.model;
 
-import com.destiny.model.enums.Escolaridade;
-import com.destiny.model.enums.EstadoProfissional;
-import com.destiny.model.enums.Genero;
-import com.destiny.model.enums.Signo;
+import com.destiny.model.enums.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +19,7 @@ public class PreferenciaBusca {
     private Set<Signo> signos = new HashSet<>();
     private Set<Escolaridade> escolaridades = new HashSet<>();
     private Set<EstadoProfissional> estadoProfissionals = new HashSet<>();
+    private Set<TiposRelacionamento> tiposRelacionamento = new HashSet<>();
 
     public PreferenciaBusca(){}
 
