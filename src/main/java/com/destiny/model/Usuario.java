@@ -2,6 +2,7 @@ package com.destiny.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Usuario {
@@ -21,6 +22,17 @@ public class Usuario {
         this.dtNascimento = dtNascimento;
         this.criadoEm = LocalDateTime.now();
         this.ativo = true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Usuario usuario)) return false;
+        return idUsuario != null && idUsuario.equals(usuario.idUsuario);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idUsuario);
     }
 
     public UUID getIdUsuario() {

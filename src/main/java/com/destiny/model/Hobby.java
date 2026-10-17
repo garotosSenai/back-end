@@ -2,6 +2,7 @@ package com.destiny.model;
 
 import com.destiny.model.enums.CategoriaHobby;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Hobby {
@@ -17,6 +18,17 @@ public class Hobby {
         this.nome = nome;
         this.categoria = categoria;
         this.descricao = descricao;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Hobby hobby)) return false;
+        return idHobby != null && idHobby.equals(hobby.idHobby);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idHobby);
     }
 
     public UUID getIdHobby() {

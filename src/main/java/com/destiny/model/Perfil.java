@@ -153,4 +153,20 @@ public class Perfil {
     public void setBuscandoTipoRelacionamento(Set<TipoRelacionamento> buscandoTipoRelacionamento) {
         this.buscandoTipoRelacionamento = buscandoTipoRelacionamento;
     }
+
+    public IdentidadeGenero getIdentidadeGenero() {
+        return identidadeGenero;
+    }
+
+    public void setIdentidadeGenero(IdentidadeGenero identidadeGenero) {
+        this.identidadeGenero = identidadeGenero;
+    }
+
+    public boolean isMostrarIdentidadeGenero() {
+        return mostrarIdentidadeGenero;
+    }
+
+    public void setMostrarIdentidadeGenero(boolean mostrarIdentidadeGenero) {
+        this.mostrarIdentidadeGenero = mostrarIdentidadeGenero;
+    }
 }
