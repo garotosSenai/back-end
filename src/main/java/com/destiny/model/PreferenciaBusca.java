@@ -23,7 +23,7 @@ public class PreferenciaBusca {
 
     public PreferenciaBusca(){}
 
-    public PreferenciaBusca(Usuario usuario, Set<Genero> generosInteresse, int idadeMinima, int idadeMaxima, double distanciaMaximaKm, int alturaMinimaCm, int alturaMaximaCm, Set<Signo> signos, Set<Escolaridade> escolaridades, Set<EstadoProfissional> estadoProfissionals) {
+    public PreferenciaBusca(Usuario usuario, Set<Genero> generosInteresse, int idadeMinima, int idadeMaxima, double distanciaMaximaKm, int alturaMinimaCm, int alturaMaximaCm, Set<Signo> signos, Set<Escolaridade> escolaridades, Set<EstadoProfissional> estadoProfissionals, Set<TiposRelacionamento> tiposRelacionamento) {
         this.usuario = usuario;
         this.generosInteresse = generosInteresse;
         this.idadeMinima = idadeMinima;
@@ -34,6 +34,7 @@ public class PreferenciaBusca {
         this.signos = signos;
         this.escolaridades = escolaridades;
         this.estadoProfissionals = estadoProfissionals;
+        this.tiposRelacionamento = tiposRelacionamento;
     }
 
     public UUID getIdPreferencia() {
@@ -122,5 +123,13 @@ public class PreferenciaBusca {
 
     public void setEstadoProfissionals(Set<EstadoProfissional> estadoProfissionals) {
         this.estadoProfissionals = estadoProfissionals;
+    }
+
+    public Set<TiposRelacionamento> getTiposRelacionamento() {
+        return tiposRelacionamento;
+    }
+
+    public void setTiposRelacionamento(Set<TiposRelacionamento> tiposRelacionamento) {
+        this.tiposRelacionamento = tiposRelacionamento;
     }
 }
