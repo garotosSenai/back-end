@@ -1,6 +1,6 @@
-package com.destiny.model;
+package com.destiny.entity;
 
-import com.destiny.model.enums.CategoriaHobby;
+import com.destiny.entity.enums.CategoriaHobby;
 
 import java.util.Objects;
 import java.util.UUID;

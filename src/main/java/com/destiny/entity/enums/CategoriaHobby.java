@@ -1,4 +1,4 @@
-package com.destiny.model.enums;
+package com.destiny.entity.enums;
 
 public enum CategoriaHobby {
     ESPORTES,

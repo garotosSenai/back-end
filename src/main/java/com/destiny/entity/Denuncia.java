@@ -1,7 +1,7 @@
-package com.destiny.model;
+package com.destiny.entity;
 
-import com.destiny.model.enums.MotivoDenuncia;
-import com.destiny.model.enums.StatusDenuncia;
+import com.destiny.entity.enums.MotivoDenuncia;
+import com.destiny.entity.enums.StatusDenuncia;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

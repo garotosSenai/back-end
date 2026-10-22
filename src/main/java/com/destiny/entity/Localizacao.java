@@ -1,4 +1,4 @@
-package com.destiny.model;
+package com.destiny.entity;
 
 public class Localizacao {
 

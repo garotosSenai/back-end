@@ -1,6 +1,6 @@
-package com.destiny.model;
+package com.destiny.entity;
 
-import com.destiny.model.enums.TipoInteracao;
+import com.destiny.entity.enums.TipoInteracao;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

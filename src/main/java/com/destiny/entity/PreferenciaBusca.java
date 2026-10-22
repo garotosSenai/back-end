@@ -1,6 +1,6 @@
-package com.destiny.model;
+package com.destiny.entity;
 
-import com.destiny.model.enums.*;
+import com.destiny.entity.enums.*;
 
 import java.util.HashSet;
 import java.util.Set;

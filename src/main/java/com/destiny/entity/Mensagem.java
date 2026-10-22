@@ -1,4 +1,4 @@
-package com.destiny.model;
+package com.destiny.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
