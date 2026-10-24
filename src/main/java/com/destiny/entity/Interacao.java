@@ -1,15 +1,19 @@
 package com.destiny.entity;
 
 import com.destiny.entity.enums.TipoInteracao;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
 public class Interacao {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID idInteracao;
     private Usuario origem;
     private Usuario destino;
+    @Enumerated(EnumType.STRING)
     private TipoInteracao tipo;
     private LocalDateTime criadoEm;
 

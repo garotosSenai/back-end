@@ -2,18 +2,23 @@ package com.destiny.entity;
 
 import com.destiny.entity.enums.MotivoDenuncia;
 import com.destiny.entity.enums.StatusDenuncia;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
 public class Denuncia {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID idDenuncia;
     private Usuario denunciante;
     private Usuario denunciado;
+    @Enumerated(EnumType.STRING)
     private MotivoDenuncia motivo;
     private String descricao;
     private LocalDateTime criadoEm;
+    @Enumerated(EnumType.STRING)
     private StatusDenuncia status;
 
     public Denuncia (){}

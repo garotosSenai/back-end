@@ -1,24 +1,32 @@
 package com.destiny.entity;
 
 import com.destiny.entity.enums.*;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+@Entity
 public class PreferenciaBusca {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID idPreferencia;
     private Usuario usuario;
+    @Enumerated(EnumType.STRING)
     private Set<CategoriaGenero> generosInteresse = new HashSet<>();
     private Integer idadeMinima = 18;
     private Integer idadeMaxima = 99;
     private Double distanciaMaximaKm = 50.0;
     private Integer alturaMinimaCm;
     private Integer alturaMaximaCm;
+    @Enumerated(EnumType.STRING)
     private Set<Signo> signos = new HashSet<>();
+    @Enumerated(EnumType.STRING)
     private Set<Escolaridade> escolaridades = new HashSet<>();
+    @Enumerated(EnumType.STRING)
     private Set<EstadoProfissional> estadosProfissionais = new HashSet<>();
+    @Enumerated(EnumType.STRING)
     private Set<TipoRelacionamento> tiposRelacionamentos = new HashSet<>();
 
     public PreferenciaBusca(){}

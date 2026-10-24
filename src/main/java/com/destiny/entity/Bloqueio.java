@@ -1,10 +1,19 @@
 package com.destiny.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import javax.annotation.processing.Generated;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
 public class Bloqueio {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID idBloqueio;
     private Usuario bloqueador;
     private Usuario bloqueado;

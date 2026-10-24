@@ -1,14 +1,18 @@
 package com.destiny.entity;
 
 import com.destiny.entity.enums.CategoriaHobby;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
 public class Hobby {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID idHobby;
     private String nome;
+    @Enumerated(EnumType.STRING)
     private CategoriaHobby categoria;
     private String descricao;
 

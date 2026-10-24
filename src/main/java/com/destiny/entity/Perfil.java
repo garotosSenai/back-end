@@ -1,27 +1,37 @@
 package com.destiny.entity;
 
 import com.destiny.entity.enums.*;
+import jakarta.persistence.*;
 
 import java.util.*;
 
+@Entity
 public class Perfil {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID idPerfil;
     private Usuario usuario;
     private String nome;
+    @Enumerated(EnumType.STRING)
     private CategoriaGenero categoriaGenero;
+    @Enumerated(EnumType.STRING)
     private IdentidadeGenero identidadeGenero;
     private boolean mostrarIdentidadeGenero = false;
     private String bio;
     private Localizacao localizacao;
     private List<Foto> fotos = new ArrayList<>();
     private Integer alturaCm;
+    @Enumerated(EnumType.STRING)
     private Signo signo;
+    @Enumerated(EnumType.STRING)
     private Escolaridade escolaridade;
+    @Enumerated(EnumType.STRING)
     private EstadoProfissional estadoProfissional;
+    @Enumerated(EnumType.STRING)
     private Set<OrientacaoSexual> orientacoes = new HashSet<>();
     private boolean mostrarOrientacao = false;
     private Set<Hobby> hobbies = new HashSet<>();
+    @Enumerated(EnumType.STRING)
     private Set<TipoRelacionamento> tiposRelacionamentos = new HashSet<>();
 
     public Perfil (){}
