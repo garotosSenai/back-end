@@ -1,20 +1,17 @@
 package com.destiny.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import javax.annotation.processing.Generated;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 public class Bloqueio {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idBloqueio;
+    private Long idBloqueio;
     private Usuario bloqueador;
     private Usuario bloqueado;
     private LocalDateTime criadoEm;
@@ -27,11 +24,11 @@ public class Bloqueio {
         this.criadoEm = LocalDateTime.now();
     }
 
-    public UUID getIdBloqueio() {
+    public Long getIdBloqueio() {
         return idBloqueio;
     }
 
-    public void setIdBloqueio(UUID idBloqueio) {
+    public void setIdBloqueio(Long idBloqueio) {
         this.idBloqueio = idBloqueio;
     }
 

@@ -5,13 +5,12 @@ import com.destiny.entity.enums.StatusDenuncia;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 public class Denuncia {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idDenuncia;
+    private Long idDenuncia;
     private Usuario denunciante;
     private Usuario denunciado;
     @Enumerated(EnumType.STRING)
@@ -32,11 +31,11 @@ public class Denuncia {
         this.status = StatusDenuncia.PENDENTE;
     }
 
-    public UUID getIdDenuncia() {
+    public Long getIdDenuncia() {
         return idDenuncia;
     }
 
-    public void setIdDenuncia(UUID idDenuncia) {
+    public void setIdDenuncia(Long idDenuncia) {
         this.idDenuncia = idDenuncia;
     }
 

@@ -6,13 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 public class Match {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idMatch;
+    private Long idMatch;
     private Usuario usuario1;
     private Usuario usuario2;
     private LocalDateTime criadoEm;
@@ -27,11 +26,11 @@ public class Match {
         this.ativo = true;
     }
 
-    public UUID getIdMatch() {
+    public Long getIdMatch() {
         return idMatch;
     }
 
-    public void setIdMatch(UUID idMatch) {
+    public void setIdMatch(Long idMatch) {
         this.idMatch = idMatch;
     }
 

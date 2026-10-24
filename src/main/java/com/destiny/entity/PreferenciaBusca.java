@@ -5,13 +5,12 @@ import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
 public class PreferenciaBusca {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idPreferencia;
+    private Long idPreferencia;
     private Usuario usuario;
     @Enumerated(EnumType.STRING)
     private Set<CategoriaGenero> generosInteresse = new HashSet<>();
@@ -35,11 +34,11 @@ public class PreferenciaBusca {
         this.usuario = usuario;
     }
 
-    public UUID getIdPreferencia() {
+    public Long getIdPreferencia() {
         return idPreferencia;
     }
 
-    public void setIdPreferencia(UUID idPreferencia) {
+    public void setIdPreferencia(Long idPreferencia) {
         this.idPreferencia = idPreferencia;
     }
 

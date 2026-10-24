@@ -6,13 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 public class Foto {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idFoto;
+    private Long idFoto;
     private String url;
     private int ordem;
     private LocalDateTime criadoEm;
@@ -25,11 +24,11 @@ public class Foto {
         this.criadoEm = LocalDateTime.now();
     }
 
-    public UUID getIdFoto() {
+    public Long getIdFoto() {
         return idFoto;
     }
 
-    public void setIdFoto(UUID idFoto) {
+    public void setIdFoto(Long idFoto) {
         this.idFoto = idFoto;
     }
 

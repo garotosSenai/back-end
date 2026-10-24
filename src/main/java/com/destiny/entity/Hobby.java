@@ -4,13 +4,12 @@ import com.destiny.entity.enums.CategoriaHobby;
 import jakarta.persistence.*;
 
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 public class Hobby {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idHobby;
+    private Long idHobby;
     private String nome;
     @Enumerated(EnumType.STRING)
     private CategoriaHobby categoria;
@@ -36,11 +35,11 @@ public class Hobby {
         return Objects.hashCode(idHobby);
     }
 
-    public UUID getIdHobby() {
+    public Long getIdHobby() {
         return idHobby;
     }
 
-    public void setIdHobby(UUID idHobby) {
+    public void setIdHobby(Long idHobby) {
         this.idHobby = idHobby;
     }
 

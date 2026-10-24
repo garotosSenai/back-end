@@ -8,13 +8,12 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 public class Usuario {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idUsuario;
+    private Long idUsuario;
     private String email;
     private String senha;
     private LocalDate dataNascimento;
@@ -43,11 +42,11 @@ public class Usuario {
         return Objects.hashCode(idUsuario);
     }
 
-    public UUID getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(UUID idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

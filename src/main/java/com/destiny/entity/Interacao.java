@@ -4,13 +4,12 @@ import com.destiny.entity.enums.TipoInteracao;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 public class Interacao {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idInteracao;
+    private Long idInteracao;
     private Usuario origem;
     private Usuario destino;
     @Enumerated(EnumType.STRING)
@@ -26,11 +25,11 @@ public class Interacao {
         this.criadoEm = LocalDateTime.now();
     }
 
-    public UUID getIdInteracao() {
+    public Long getIdInteracao() {
         return idInteracao;
     }
 
-    public void setIdInteracao(UUID idInteracao) {
+    public void setIdInteracao(Long idInteracao) {
         this.idInteracao = idInteracao;
     }
 

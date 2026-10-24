@@ -9,7 +9,7 @@ import java.util.*;
 public class Perfil {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idPerfil;
+    private Long idPerfil;
     private Usuario usuario;
     private String nome;
     @Enumerated(EnumType.STRING)
@@ -43,11 +43,11 @@ public class Perfil {
         this.localizacao = localizacao;
     }
 
-    public UUID getIdPerfil() {
+    public Long getIdPerfil() {
         return idPerfil;
     }
 
-    public void setIdPerfil(UUID idPerfil) {
+    public void setIdPerfil(Long idPerfil) {
         this.idPerfil = idPerfil;
     }
 

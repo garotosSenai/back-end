@@ -6,13 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 public class Mensagem {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idMensagem;
+    private Long idMensagem;
     private Match match;
     private Usuario remetente;
     private String conteudo;
@@ -28,11 +27,11 @@ public class Mensagem {
         this.enviadaEm = LocalDateTime.now();
     }
 
-    public UUID getIdMensagem() {
+    public Long getIdMensagem() {
         return idMensagem;
     }
 
-    public void setIdMensagem(UUID idMensagem) {
+    public void setIdMensagem(Long idMensagem) {
         this.idMensagem = idMensagem;
     }
 
