@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Localizacao {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idlocalizacao;
     private String cidade;
     private String estado;
     private Double latitude;
