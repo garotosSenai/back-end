@@ -1,6 +1,5 @@
 package com.destiny.entity;
 
-import com.destiny.entity.enums.CategoriaHobby;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -12,12 +11,12 @@ public class Hobby {
     private Long idHobby;
     private String nome;
     @Enumerated(EnumType.STRING)
-    private CategoriaHobby categoria;
+    private String categoria;
     private String descricao;
 
     public Hobby(){}
 
-    public Hobby(String nome, CategoriaHobby categoria, String descricao) {
+    public Hobby(String nome, String categoria, String descricao) {
         this.nome = nome;
         this.categoria = categoria;
         this.descricao = descricao;
@@ -51,11 +50,11 @@ public class Hobby {
         this.nome = nome;
     }
 
-    public CategoriaHobby getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaHobby categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
