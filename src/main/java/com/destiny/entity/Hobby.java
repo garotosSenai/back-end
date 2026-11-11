@@ -10,7 +10,7 @@ public class Hobby {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idHobby;
     private String nome;
-    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private String categoria;
     private String descricao;
 

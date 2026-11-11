@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+
 public class Denuncia {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
