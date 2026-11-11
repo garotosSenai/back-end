@@ -10,6 +10,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+<<<<<<< HEAD
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 
 public class Localizacao {
     @Id
@@ -20,14 +27,18 @@ public class Localizacao {
     private Double latitude;
     private Double longitude;
 
+<<<<<<< HEAD
     public Localizacao(){}
 
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
     public Localizacao(String cidade, String estado, Double latitude, Double longitude) {
         this.cidade = cidade;
         this.estado = estado;
         this.latitude = latitude;
         this.longitude = longitude;
     }
+<<<<<<< HEAD
 
     public Localizacao(Long idlocalizacao, String cidade, String estado, Double latitude, Double longitude) {
         this.idlocalizacao = idlocalizacao;
@@ -76,4 +87,6 @@ public class Localizacao {
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 }

@@ -11,7 +11,14 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
+<<<<<<< HEAD
 
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +33,11 @@ public class Mensagem {
     private LocalDateTime enviadaEm;
     private LocalDateTime visualizadaEm;
 
+<<<<<<< HEAD
     public Mensagem(){}
 
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
     public Mensagem(Match match, Usuario remetente, String conteudo, LocalDateTime enviadaEm, LocalDateTime visualizadaEm) {
         this.match = match;
         this.remetente = remetente;
@@ -35,6 +45,7 @@ public class Mensagem {
         this.enviadaEm = enviadaEm;
         this.visualizadaEm = visualizadaEm;
     }
+<<<<<<< HEAD
 
     public Mensagem(Long idMensagem, Match match, Usuario remetente, String conteudo, LocalDateTime enviadaEm, LocalDateTime visualizadaEm) {
         this.idMensagem = idMensagem;
@@ -93,4 +104,6 @@ public class Mensagem {
     public void setVisualizadaEm(LocalDateTime visualizadaEm) {
         this.visualizadaEm = visualizadaEm;
     }
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 }

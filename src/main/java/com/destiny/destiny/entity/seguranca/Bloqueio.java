@@ -10,6 +10,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
+<<<<<<< HEAD
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 
 public class Bloqueio {
     @Id
@@ -23,13 +30,17 @@ public class Bloqueio {
     private Usuario bloqueado;
     private LocalDateTime criadoEm;
 
+<<<<<<< HEAD
     public Bloqueio(){}
 
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
     public Bloqueio(Usuario bloqueador, Usuario bloqueado, LocalDateTime criadoEm) {
         this.bloqueador = bloqueador;
         this.bloqueado = bloqueado;
         this.criadoEm = criadoEm;
     }
+<<<<<<< HEAD
 
     public Bloqueio(Long idBloqueio, Usuario bloqueador, Usuario bloqueado, LocalDateTime criadoEm) {
         this.idBloqueio = idBloqueio;
@@ -69,6 +80,8 @@ public class Bloqueio {
     public void setCriadoEm(LocalDateTime criadoEm) {
         this.criadoEm = criadoEm;
     }
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 }
 
 

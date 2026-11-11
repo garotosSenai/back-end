@@ -12,6 +12,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
+<<<<<<< HEAD
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 
 public class Foto {
     @Id
@@ -21,13 +28,17 @@ public class Foto {
     private int ordem;
     private LocalDateTime criadoEm;
 
+<<<<<<< HEAD
     public Foto(){}
 
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
     public Foto(String url, int ordem, LocalDateTime criadoEm) {
         this.url = url;
         this.ordem = ordem;
         this.criadoEm = criadoEm;
     }
+<<<<<<< HEAD
 
     public Foto(Long idFoto, String url, int ordem, LocalDateTime criadoEm) {
         this.idFoto = idFoto;
@@ -67,4 +78,6 @@ public class Foto {
     public void setCriadoEm(LocalDateTime criadoEm) {
         this.criadoEm = criadoEm;
     }
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 }

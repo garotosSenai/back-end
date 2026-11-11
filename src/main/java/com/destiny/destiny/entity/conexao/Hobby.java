@@ -1,9 +1,24 @@
 package com.destiny.destiny.entity.conexao;
 
+<<<<<<< HEAD
 import jakarta.persistence.*;
 
 @Entity
 
+=======
+import com.destiny.destiny.entity.enums.CategoriaHobby;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 public class Hobby {
 
     @Id
@@ -11,6 +26,7 @@ public class Hobby {
     private Long idHobby;
     private String nome;
     @Enumerated(EnumType.STRING)
+<<<<<<< HEAD
     private String categoriahobby;
     private String descricao;
 
@@ -62,3 +78,10 @@ public class Hobby {
         this.descricao = descricao;
     }
 }
+=======
+    private CategoriaHobby categoria;
+    private String descricao;
+
+
+}
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d

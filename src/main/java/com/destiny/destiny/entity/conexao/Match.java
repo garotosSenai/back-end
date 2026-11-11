@@ -10,7 +10,14 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
+<<<<<<< HEAD
 
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 
 public class Match {
 
@@ -32,6 +39,7 @@ public class Match {
         this.ativo = ativo;
         this.criadoEm = criadoEm;
     }
+<<<<<<< HEAD
 
     public Match(Long idMatch, Usuario usuario1, Usuario usuario2, LocalDateTime criadoEm, boolean ativo) {
         this.idMatch = idMatch;
@@ -80,4 +88,6 @@ public class Match {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 }

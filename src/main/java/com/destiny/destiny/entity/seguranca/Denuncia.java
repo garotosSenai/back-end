@@ -12,6 +12,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
+<<<<<<< HEAD
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 public class Denuncia {
 
     @Id
@@ -30,8 +37,11 @@ public class Denuncia {
     @Enumerated(EnumType.STRING)
     private StatusDenuncia status;
 
+<<<<<<< HEAD
     public Denuncia(){}
 
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
     public Denuncia(Usuario denunciante, Usuario denunciado, MotivoDenuncia motivo, String descricao, LocalDateTime criadoEm, StatusDenuncia status) {
         this.denunciante = denunciante;
         this.denunciado = denunciado;
@@ -40,6 +50,7 @@ public class Denuncia {
         this.criadoEm = criadoEm;
         this.status = status;
     }
+<<<<<<< HEAD
 
     public Denuncia(Long idDenuncia, Usuario denunciante, Usuario denunciado, MotivoDenuncia motivo, String descricao, LocalDateTime criadoEm, StatusDenuncia status) {
         this.idDenuncia = idDenuncia;
@@ -50,4 +61,6 @@ public class Denuncia {
         this.criadoEm = criadoEm;
         this.status = status;
     }
+=======
+>>>>>>> 16141627b331fa0b60506f628fb9c8830027aa5d
 }
