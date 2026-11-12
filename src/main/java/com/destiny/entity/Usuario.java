@@ -7,16 +7,12 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "usuario")
 public class Usuario {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsuario;
-    @Column(nullable = false, unique = true)
     private String email;
-    @Column(nullable = false)
     private String senha;
-    @Column(nullable = false)
     private LocalDate dataNascimento;
     private LocalDateTime criadoEm;
     private boolean ativo;

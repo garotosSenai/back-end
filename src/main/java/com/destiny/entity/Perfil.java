@@ -18,7 +18,6 @@ public class Perfil {
     private IdentidadeGenero identidadeGenero;
     private boolean mostrarIdentidadeGenero = false;
     private String bio;
-    @Embedded
     private Localizacao localizacao;
     private List<Foto> fotos = new ArrayList<>();
     private Integer alturaCm;

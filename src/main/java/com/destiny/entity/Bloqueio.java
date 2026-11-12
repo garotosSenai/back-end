@@ -5,19 +5,11 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "bloqueio", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"id_bloqueado", "id_bloqueador"})})
 public class Bloqueio {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBloqueio;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_bloqueador", nullable = false)
     private Usuario bloqueador;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_bloqueado", nullable = false)
     private Usuario bloqueado;
     private LocalDateTime criadoEm;
 
