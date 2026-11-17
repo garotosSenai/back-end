@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Entity
 public class Usuario {
@@ -17,6 +16,15 @@ public class Usuario {
     private LocalDateTime criadoEm;
     private boolean ativo;
 
+    public Usuario(Long idUsuario, String email, String senha, LocalDate dataNascimento) {
+        this.idUsuario = idUsuario;
+        this.email = email;
+        this.senha = senha;
+        this.dataNascimento = dataNascimento;
+        this.criadoEm = LocalDateTime.now();
+        this.ativo = true;
+    }
+
     public Usuario (){}
 
     public Usuario(String email, String senha, LocalDate dataNascimento) {
@@ -27,17 +35,6 @@ public class Usuario {
         this.ativo = true;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Usuario usuario)) return false;
-        return idUsuario != null && idUsuario.equals(usuario.idUsuario);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(idUsuario);
-    }
 
     public Long getIdUsuario() {
         return idUsuario;
