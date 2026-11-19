@@ -25,4 +25,14 @@ public class UsuarioController {
     public void cadastrar (@RequestBody Usuario usuario){
         usuarioService.cadastrarUsuario(usuario);
     }
+
+    @DeleteMapping ("/{id}")
+    public void deletar (@PathVariable Long id){
+        usuarioService.deletarUsuario(id);
+    }
+
+    @PutMapping ("/{id}")
+    public void alterar (@PathVariable Long id, @RequestBody Usuario u){
+        usuarioService.alterarUsuario(id, u);
+    }
 }

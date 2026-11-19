@@ -3,6 +3,8 @@ package com.destiny.service;
 import com.destiny.entity.Usuario;
 import com.destiny.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +26,16 @@ public class UsuarioService {
     public void cadastrarUsuario (Usuario usuario){
         Usuario u = new Usuario (usuario.getEmail(), usuario.getSenha(), usuario.getDataNascimento());
         usuarioRepository.save(u);
+    }
+
+    public void deletarUsuario (@PathVariable Long id){
+        usuarioRepository.deleteById(id);
+    }
+
+    public void alterarUsuario (@PathVariable Long id, @RequestBody Usuario u){
+        Usuario usuario = usuarioRepository.getReferenceById(id);
+        usuario.setEmail(u.getEmail());
+        usuario.setSenha(u.getSenha());
+        usuario.setDataNascimento(u.getDataNascimento());
     }
 }
