@@ -17,11 +17,7 @@ public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMatch;
-    @ManyToOne
-    @JoinColumn(name = "usuario_1_id_usuario")
     private Usuario usuario1;
-    @ManyToOne
-    @JoinColumn(name = "usuario_2_id_usuario")
     private Usuario usuario2;
     private LocalDateTime criadoEm;
     private boolean ativo;

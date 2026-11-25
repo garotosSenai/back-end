@@ -17,11 +17,7 @@ public class Interacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idInteracao;
-    @ManyToOne
-    @JoinColumn(name = "origem_id_usuario")
     private Usuario origem;
-    @ManyToOne
-    @JoinColumn(name = "destino_id_usuario")
     private Usuario destino;
     @Enumerated(EnumType.STRING)
     private TipoInteracao tipo;
@@ -42,6 +38,46 @@ public class Interacao {
         this.origem = origem;
         this.destino = destino;
         this.tipo = tipo;
+        this.criadoEm = criadoEm;
+    }
+
+    public Long getIdInteracao() {
+        return idInteracao;
+    }
+
+    public void setIdInteracao(Long idInteracao) {
+        this.idInteracao = idInteracao;
+    }
+
+    public Usuario getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(Usuario origem) {
+        this.origem = origem;
+    }
+
+    public Usuario getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Usuario destino) {
+        this.destino = destino;
+    }
+
+    public TipoInteracao getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoInteracao tipo) {
+        this.tipo = tipo;
+    }
+
+    public LocalDateTime getCriadoEm() {
+        return criadoEm;
+    }
+
+    public void setCriadoEm(LocalDateTime criadoEm) {
         this.criadoEm = criadoEm;
     }
 }

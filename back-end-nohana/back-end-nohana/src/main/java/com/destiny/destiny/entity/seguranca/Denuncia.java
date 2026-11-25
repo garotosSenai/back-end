@@ -17,11 +17,7 @@ public class Denuncia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDenuncia;
-    @ManyToOne
-    @JoinColumn(name = "denunciante_id_usuario")
     private Usuario denunciante;
-    @ManyToOne
-    @JoinColumn(name = "denunciado_id_usuario")
     private Usuario denunciado;
     @Enumerated(EnumType.STRING)
     private MotivoDenuncia motivo;

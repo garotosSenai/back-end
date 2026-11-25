@@ -16,11 +16,7 @@ public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMensagem;
-    @ManyToOne
-    @JoinColumn(name = "match_id_match")
     private Match match;
-    @ManyToOne
-    @JoinColumn(name = "remetente_id_usuario")
     private Usuario remetente;
     private String conteudo;
     private LocalDateTime enviadaEm;

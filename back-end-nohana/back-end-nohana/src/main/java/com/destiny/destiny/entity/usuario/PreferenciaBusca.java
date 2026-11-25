@@ -16,8 +16,6 @@ public class PreferenciaBusca {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPreferencia;
-    @ManyToOne
-    @JoinColumn(name = "usuario_id_usuario")
     private Usuario usuario;
     @Enumerated(EnumType.STRING)
     private Set<CategoriaGenero> generosInteresse = new HashSet<>();
@@ -63,6 +61,102 @@ public class PreferenciaBusca {
         this.signos = signos;
         this.escolaridades = escolaridades;
         this.estadosProfissionais = estadosProfissionais;
+        this.tiposRelacionamentos = tiposRelacionamentos;
+    }
+
+    public Long getIdPreferencia() {
+        return idPreferencia;
+    }
+
+    public void setIdPreferencia(Long idPreferencia) {
+        this.idPreferencia = idPreferencia;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Set<CategoriaGenero> getGenerosInteresse() {
+        return generosInteresse;
+    }
+
+    public void setGenerosInteresse(Set<CategoriaGenero> generosInteresse) {
+        this.generosInteresse = generosInteresse;
+    }
+
+    public Integer getIdadeMaxima() {
+        return idadeMaxima;
+    }
+
+    public void setIdadeMaxima(Integer idadeMaxima) {
+        this.idadeMaxima = idadeMaxima;
+    }
+
+    public Integer getIdadeMinima() {
+        return idadeMinima;
+    }
+
+    public void setIdadeMinima(Integer idadeMinima) {
+        this.idadeMinima = idadeMinima;
+    }
+
+    public Double getDistanciaMaximaKm() {
+        return distanciaMaximaKm;
+    }
+
+    public void setDistanciaMaximaKm(Double distanciaMaximaKm) {
+        this.distanciaMaximaKm = distanciaMaximaKm;
+    }
+
+    public Integer getAlturaMinimaCm() {
+        return alturaMinimaCm;
+    }
+
+    public void setAlturaMinimaCm(Integer alturaMinimaCm) {
+        this.alturaMinimaCm = alturaMinimaCm;
+    }
+
+    public Integer getAlturaMaximaCm() {
+        return alturaMaximaCm;
+    }
+
+    public void setAlturaMaximaCm(Integer alturaMaximaCm) {
+        this.alturaMaximaCm = alturaMaximaCm;
+    }
+
+    public Set<Signo> getSignos() {
+        return signos;
+    }
+
+    public void setSignos(Set<Signo> signos) {
+        this.signos = signos;
+    }
+
+    public Set<Escolaridade> getEscolaridades() {
+        return escolaridades;
+    }
+
+    public void setEscolaridades(Set<Escolaridade> escolaridades) {
+        this.escolaridades = escolaridades;
+    }
+
+    public Set<EstadoProfissional> getEstadosProfissionais() {
+        return estadosProfissionais;
+    }
+
+    public void setEstadosProfissionais(Set<EstadoProfissional> estadosProfissionais) {
+        this.estadosProfissionais = estadosProfissionais;
+    }
+
+    public Set<TipoRelacionamento> getTiposRelacionamentos() {
+        return tiposRelacionamentos;
+    }
+
+    public void setTiposRelacionamentos(Set<TipoRelacionamento> tiposRelacionamentos) {
         this.tiposRelacionamentos = tiposRelacionamentos;
     }
 }

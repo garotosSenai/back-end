@@ -15,11 +15,7 @@ public class Bloqueio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBloqueio;
-    @ManyToOne
-    @JoinColumn(name = "bloqueador_id_usuario")
     private Usuario bloqueador;
-    @ManyToOne
-    @JoinColumn(name = "bloqueado_id_usuario")
     private Usuario bloqueado;
     private LocalDateTime criadoEm;
 
