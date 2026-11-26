@@ -10,17 +10,25 @@ public class Interacao {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idInteracao;
-    private Usuario origem;
-    private Usuario destino;
+    private Long idOrigem;
+    private Long idDestino;
     @Enumerated(EnumType.STRING)
     private TipoInteracao tipo;
     private LocalDateTime criadoEm;
 
     public Interacao (){}
 
-    public Interacao(Usuario origem, Usuario destino, TipoInteracao tipo) {
-        this.origem = origem;
-        this.destino = destino;
+    public Interacao(Long idInteracao, Long idOrigem, Long idDestino, TipoInteracao tipo) {
+        this.idInteracao = idInteracao;
+        this.idOrigem = idOrigem;
+        this.idDestino = idDestino;
+        this.tipo = tipo;
+        this.criadoEm = LocalDateTime.now();
+    }
+
+    public Interacao(Long idOrigem, Long idDestino, TipoInteracao tipo) {
+        this.idOrigem = idOrigem;
+        this.idDestino = idDestino;
         this.tipo = tipo;
         this.criadoEm = LocalDateTime.now();
     }
@@ -33,20 +41,20 @@ public class Interacao {
         this.idInteracao = idInteracao;
     }
 
-    public Usuario getOrigem() {
-        return origem;
+    public Long getIdOrigem() {
+        return idOrigem;
     }
 
-    public void setOrigem(Usuario origem) {
-        this.origem = origem;
+    public void setIdOrigem(Long idOrigem) {
+        this.idOrigem = idOrigem;
     }
 
-    public Usuario getDestino() {
-        return destino;
+    public Long getIdDestino() {
+        return idDestino;
     }
 
-    public void setDestino(Usuario destino) {
-        this.destino = destino;
+    public void setIdDestino(Long idDestino) {
+        this.idDestino = idDestino;
     }
 
     public TipoInteracao getTipo() {
