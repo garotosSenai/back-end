@@ -10,10 +10,11 @@ import java.time.LocalDateTime;
 
 public class Denuncia {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDenuncia;
-    private Usuario denunciante;
-    private Usuario denunciado;
+    private Long idDenunciante;
+    private Long idDenunciado;
     @Enumerated(EnumType.STRING)
     private MotivoDenuncia motivo;
     private String descricao;
@@ -21,11 +22,22 @@ public class Denuncia {
     @Enumerated(EnumType.STRING)
     private StatusDenuncia status;
 
-    public Denuncia (){}
+    public Denuncia() {
+    }
 
-    public Denuncia(Usuario denunciante, Usuario denunciado, MotivoDenuncia motivo, String descricao) {
-        this.denunciante = denunciante;
-        this.denunciado = denunciado;
+    public Denuncia(Long idDenuncia, Long idDenunciante, Long idDenunciado, MotivoDenuncia motivo, String descricao) {
+        this.idDenuncia = idDenuncia;
+        this.idDenunciante = idDenunciante;
+        this.idDenunciado = idDenunciado;
+        this.motivo = motivo;
+        this.descricao = descricao;
+        this.criadoEm = LocalDateTime.now();
+        this.status = StatusDenuncia.PENDENTE;
+    }
+
+    public Denuncia(Long idDenunciante, Long idDenunciado, MotivoDenuncia motivo, String descricao) {
+        this.idDenunciante = idDenunciante;
+        this.idDenunciado = idDenunciado;
         this.motivo = motivo;
         this.descricao = descricao;
         this.criadoEm = LocalDateTime.now();
@@ -40,20 +52,20 @@ public class Denuncia {
         this.idDenuncia = idDenuncia;
     }
 
-    public Usuario getDenunciante() {
-        return denunciante;
+    public Long getIdDenunciante() {
+        return idDenunciante;
     }
 
-    public void setDenunciante(Usuario denunciante) {
-        this.denunciante = denunciante;
+    public void setIdDenunciante(Long idDenunciante) {
+        this.idDenunciante = idDenunciante;
     }
 
-    public Usuario getDenunciado() {
-        return denunciado;
+    public Long getIdDenunciado() {
+        return idDenunciado;
     }
 
-    public void setDenunciado(Usuario denunciado) {
-        this.denunciado = denunciado;
+    public void setIdDenunciado(Long idDenunciado) {
+        this.idDenunciado = idDenunciado;
     }
 
     public MotivoDenuncia getMotivo() {
