@@ -10,37 +10,67 @@ public class Perfil {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPerfil;
-    private Usuario usuario;
+    private Long idUsuario;
     private String nome;
-    @Enumerated(EnumType.STRING)
-    private CategoriaGenero categoriaGenero;
-    @Enumerated(EnumType.STRING)
-    private IdentidadeGenero identidadeGenero;
-    private boolean mostrarIdentidadeGenero = false;
+    @Enumerated(value = EnumType.STRING)
+    private Genero genero;
+    private String identidadeGenero;
+    private boolean mostrarIdentidadeGenero;
     private String bio;
+    @Embedded
     private Localizacao localizacao;
+    @Transient //por enquanto nao vai salvar
     private List<Foto> fotos = new ArrayList<>();
     private Integer alturaCm;
-    @Enumerated(EnumType.STRING)
-    private Signo signo;
-    @Enumerated(EnumType.STRING)
-    private Escolaridade escolaridade;
-    @Enumerated(EnumType.STRING)
-    private EstadoProfissional estadoProfissional;
-    @Enumerated(EnumType.STRING)
-    private Set<OrientacaoSexual> orientacoes = new HashSet<>();
-    private boolean mostrarOrientacao = false;
+    private String signo;
+    private String escolaridade;
+    private String estadoProfissional;
+    private String orientacaoSexual;
+    private boolean mostrarOrientacao;
+    @Transient //por enquanto nao vai salvar
     private Set<Hobby> hobbies = new HashSet<>();
-    @Enumerated(EnumType.STRING)
-    private Set<TipoRelacionamento> tiposRelacionamentos = new HashSet<>();
+    private String tipoRelacionamento;
 
     public Perfil (){}
 
-    public Perfil(Usuario usuario, String nome, CategoriaGenero categoriaGenero, Localizacao localizacao) {
-        this.usuario = usuario;
+
+    public Perfil(Long idPerfil, Long idUsuario, String nome, Genero genero, String identidadeGenero, String bio, Localizacao localizacao, List<Foto> fotos, Integer alturaCm, String signo, String escolaridade, String estadoProfissional, String orientacaoSexual, Set<Hobby> hobbies, String tipoRelacionamento) {
+        this.idPerfil = idPerfil;
+        this.idUsuario = idUsuario;
         this.nome = nome;
-        this.categoriaGenero = categoriaGenero;
+        this.genero = genero;
+        this.identidadeGenero = identidadeGenero;
+        this.mostrarIdentidadeGenero = false;
+        this.bio = bio;
         this.localizacao = localizacao;
+        this.fotos = fotos;
+        this.alturaCm = alturaCm;
+        this.signo = signo;
+        this.escolaridade = escolaridade;
+        this.estadoProfissional = estadoProfissional;
+        this.orientacaoSexual = orientacaoSexual;
+        this.mostrarOrientacao = false;
+        this.hobbies = hobbies;
+        this.tipoRelacionamento = tipoRelacionamento;
+    }
+
+    public Perfil(Long idUsuario, String nome, Genero genero, String identidadeGenero,String bio, Localizacao localizacao, List<Foto> fotos, Integer alturaCm, String signo, String escolaridade, String estadoProfissional, String orientacaoSexual, Set<Hobby> hobbies, String tipoRelacionamento) {
+        this.idUsuario = idUsuario;
+        this.nome = nome;
+        this.genero = genero;
+        this.identidadeGenero = identidadeGenero;
+        this.mostrarIdentidadeGenero = false;
+        this.bio = bio;
+        this.localizacao = localizacao;
+        this.fotos = fotos;
+        this.alturaCm = alturaCm;
+        this.signo = signo;
+        this.escolaridade = escolaridade;
+        this.estadoProfissional = estadoProfissional;
+        this.orientacaoSexual = orientacaoSexual;
+        this.mostrarOrientacao = false;
+        this.hobbies = hobbies;
+        this.tipoRelacionamento = tipoRelacionamento;
     }
 
     public Long getIdPerfil() {
@@ -51,12 +81,12 @@ public class Perfil {
         this.idPerfil = idPerfil;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Long getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNome() {
@@ -67,12 +97,28 @@ public class Perfil {
         this.nome = nome;
     }
 
-    public CategoriaGenero getCategoriaGenero() {
-        return categoriaGenero;
+    public Genero getGenero() {
+        return genero;
     }
 
-    public void setCategoriaGenero(CategoriaGenero categoriaGenero) {
-        this.categoriaGenero = categoriaGenero;
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public String getIdentidadeGenero() {
+        return identidadeGenero;
+    }
+
+    public void setIdentidadeGenero(String identidadeGenero) {
+        this.identidadeGenero = identidadeGenero;
+    }
+
+    public boolean isMostrarIdentidadeGenero() {
+        return mostrarIdentidadeGenero;
+    }
+
+    public void setMostrarIdentidadeGenero(boolean mostrarIdentidadeGenero) {
+        this.mostrarIdentidadeGenero = mostrarIdentidadeGenero;
     }
 
     public String getBio() {
@@ -107,37 +153,36 @@ public class Perfil {
         this.alturaCm = alturaCm;
     }
 
-    public Signo getSigno() {
+    public String getSigno() {
         return signo;
     }
 
-    public void setSigno(Signo signo) {
+    public void setSigno(String signo) {
         this.signo = signo;
     }
 
-    public Escolaridade getEscolaridade() {
+    public String getEscolaridade() {
         return escolaridade;
     }
 
-    public void setEscolaridade(Escolaridade escolaridade) {
+    public void setEscolaridade(String escolaridade) {
         this.escolaridade = escolaridade;
     }
 
-    public EstadoProfissional getEstadoProfissional() {
+    public String getEstadoProfissional() {
         return estadoProfissional;
     }
 
-    public void setEstadoProfissional(EstadoProfissional estadoProfissional) {
+    public void setEstadoProfissional(String estadoProfissional) {
         this.estadoProfissional = estadoProfissional;
     }
 
-
-    public Set<OrientacaoSexual> getOrientacoes() {
-        return orientacoes;
+    public String getOrientacaoSexual() {
+        return orientacaoSexual;
     }
 
-    public void setOrientacoes(Set<OrientacaoSexual> orientacoes) {
-        this.orientacoes = orientacoes;
+    public void setOrientacaoSexual(String orientacaoSexual) {
+        this.orientacaoSexual = orientacaoSexual;
     }
 
     public boolean isMostrarOrientacao() {
@@ -156,27 +201,11 @@ public class Perfil {
         this.hobbies = hobbies;
     }
 
-    public Set<TipoRelacionamento> getTiposRelacionamentos() {
-        return tiposRelacionamentos;
+    public String getTipoRelacionamento() {
+        return tipoRelacionamento;
     }
 
-    public void setTiposRelacionamentos(Set<TipoRelacionamento> tiposRelacionamentos) {
-        this.tiposRelacionamentos = tiposRelacionamentos;
-    }
-
-    public IdentidadeGenero getIdentidadeGenero() {
-        return identidadeGenero;
-    }
-
-    public void setIdentidadeGenero(IdentidadeGenero identidadeGenero) {
-        this.identidadeGenero = identidadeGenero;
-    }
-
-    public boolean isMostrarIdentidadeGenero() {
-        return mostrarIdentidadeGenero;
-    }
-
-    public void setMostrarIdentidadeGenero(boolean mostrarIdentidadeGenero) {
-        this.mostrarIdentidadeGenero = mostrarIdentidadeGenero;
+    public void setTipoRelacionamento(String tipoRelacionamento) {
+        this.tipoRelacionamento = tipoRelacionamento;
     }
 }
