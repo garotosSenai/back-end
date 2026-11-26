@@ -11,27 +11,49 @@ public class PreferenciaBusca {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPreferencia;
-    private Usuario usuario;
-    @Enumerated(EnumType.STRING)
-    private Set<CategoriaGenero> generosInteresse = new HashSet<>();
+    private Long idUsuario;
+    //@ElementCollection = ajustar
+    @Transient //por enquanto deixar assim
+    private Set<Genero> generos = new HashSet<>();
     private Integer idadeMinima = 18;
     private Integer idadeMaxima = 99;
     private Double distanciaMaximaKm = 50.0;
     private Integer alturaMinimaCm;
     private Integer alturaMaximaCm;
-    @Enumerated(EnumType.STRING)
-    private Set<Signo> signos = new HashSet<>();
-    @Enumerated(EnumType.STRING)
-    private Set<Escolaridade> escolaridades = new HashSet<>();
-    @Enumerated(EnumType.STRING)
-    private Set<EstadoProfissional> estadosProfissionais = new HashSet<>();
-    @Enumerated(EnumType.STRING)
-    private Set<TipoRelacionamento> tiposRelacionamentos = new HashSet<>();
+    private String signo;
+    private String escolaridade;
+    private String estadoProfissional;
+    private String tipoRelacionamento;
 
     public PreferenciaBusca(){}
 
-    public PreferenciaBusca(Usuario usuario) {
-        this.usuario = usuario;
+    public PreferenciaBusca(Long idPreferencia, Long idUsuario, Set<Genero> generos, Integer idadeMinima, Integer idadeMaxima, Double distanciaMaximaKm, Integer alturaMinimaCm, Integer alturaMaximaCm, String signo, String escolaridade, String estadoProfissional, String tipoRelacionamento) {
+        this.idPreferencia = idPreferencia;
+        this.idUsuario = idUsuario;
+        this.generos = generos;
+        this.idadeMinima = idadeMinima;
+        this.idadeMaxima = idadeMaxima;
+        this.distanciaMaximaKm = distanciaMaximaKm;
+        this.alturaMinimaCm = alturaMinimaCm;
+        this.alturaMaximaCm = alturaMaximaCm;
+        this.signo = signo;
+        this.escolaridade = escolaridade;
+        this.estadoProfissional = estadoProfissional;
+        this.tipoRelacionamento = tipoRelacionamento;
+    }
+
+    public PreferenciaBusca(Long idUsuario, Set<Genero> generos, Integer idadeMinima, Integer idadeMaxima, Double distanciaMaximaKm, Integer alturaMinimaCm, Integer alturaMaximaCm, String signo, String escolaridade, String estadoProfissional, String tipoRelacionamento) {
+        this.idUsuario = idUsuario;
+        this.generos = generos;
+        this.idadeMinima = idadeMinima;
+        this.idadeMaxima = idadeMaxima;
+        this.distanciaMaximaKm = distanciaMaximaKm;
+        this.alturaMinimaCm = alturaMinimaCm;
+        this.alturaMaximaCm = alturaMaximaCm;
+        this.signo = signo;
+        this.escolaridade = escolaridade;
+        this.estadoProfissional = estadoProfissional;
+        this.tipoRelacionamento = tipoRelacionamento;
     }
 
     public Long getIdPreferencia() {
@@ -42,20 +64,20 @@ public class PreferenciaBusca {
         this.idPreferencia = idPreferencia;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Long getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public Set<CategoriaGenero> getGenerosInteresse() {
-        return generosInteresse;
+    public Set<Genero> getGeneros() {
+        return generos;
     }
 
-    public void setGenerosInteresse(Set<CategoriaGenero> generosInteresse) {
-        this.generosInteresse = generosInteresse;
+    public void setGeneros(Set<Genero> generos) {
+        this.generos = generos;
     }
 
     public Integer getIdadeMinima() {
@@ -98,35 +120,35 @@ public class PreferenciaBusca {
         this.alturaMaximaCm = alturaMaximaCm;
     }
 
-    public Set<Signo> getSignos() {
-        return signos;
+    public String getSigno() {
+        return signo;
     }
 
-    public void setSignos(Set<Signo> signos) {
-        this.signos = signos;
+    public void setSigno(String signo) {
+        this.signo = signo;
     }
 
-    public Set<Escolaridade> getEscolaridades() {
-        return escolaridades;
+    public String getEscolaridade() {
+        return escolaridade;
     }
 
-    public void setEscolaridades(Set<Escolaridade> escolaridades) {
-        this.escolaridades = escolaridades;
+    public void setEscolaridade(String escolaridade) {
+        this.escolaridade = escolaridade;
     }
 
-    public Set<EstadoProfissional> getEstadosProfissionais() {
-        return estadosProfissionais;
+    public String getEstadoProfissional() {
+        return estadoProfissional;
     }
 
-    public void setEstadosProfissionais(Set<EstadoProfissional> estadosProfissionais) {
-        this.estadosProfissionais = estadosProfissionais;
+    public void setEstadoProfissional(String estadoProfissional) {
+        this.estadoProfissional = estadoProfissional;
     }
 
-    public Set<TipoRelacionamento> getTiposRelacionamentos() {
-        return tiposRelacionamentos;
+    public String getTipoRelacionamento() {
+        return tipoRelacionamento;
     }
 
-    public void setTiposRelacionamentos(Set<TipoRelacionamento> tiposRelacionamentos) {
-        this.tiposRelacionamentos = tiposRelacionamentos;
+    public void setTipoRelacionamento(String tipoRelacionamento) {
+        this.tipoRelacionamento = tipoRelacionamento;
     }
 }
