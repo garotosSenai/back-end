@@ -12,19 +12,29 @@ public class Mensagem {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMensagem;
-    private Match match;
-    private Usuario remetente;
+    private Long idMatch;
+    private Long idRemetente;
     private String conteudo;
     private LocalDateTime enviadaEm;
     private LocalDateTime visualizadaEm;
 
     public Mensagem (){}
 
-    public Mensagem(Match match, Usuario remetente, String conteudo) {
-        this.match = match;
-        this.remetente = remetente;
+    public Mensagem(Long idMensagem, Long idMatch, Long idRemetente, String conteudo) {
+        this.idMensagem = idMensagem;
+        this.idMatch = idMatch;
+        this.idRemetente = idRemetente;
         this.conteudo = conteudo;
         this.enviadaEm = LocalDateTime.now();
+        this.visualizadaEm = LocalDateTime.now();
+    }
+
+    public Mensagem(Long idMatch, Long idRemetente, String conteudo) {
+        this.idMatch = idMatch;
+        this.idRemetente = idRemetente;
+        this.conteudo = conteudo;
+        this.enviadaEm = LocalDateTime.now();
+        this.visualizadaEm = LocalDateTime.now();
     }
 
     public Long getIdMensagem() {
@@ -35,20 +45,20 @@ public class Mensagem {
         this.idMensagem = idMensagem;
     }
 
-    public Match getMatch() {
-        return match;
+    public Long getIdMatch() {
+        return idMatch;
     }
 
-    public void setMatch(Match match) {
-        this.match = match;
+    public void setIdMatch(Long idMatch) {
+        this.idMatch = idMatch;
     }
 
-    public Usuario getRemetente() {
-        return remetente;
+    public Long getIdRemetente() {
+        return idRemetente;
     }
 
-    public void setRemetente(Usuario remetente) {
-        this.remetente = remetente;
+    public void setIdRemetente(Long idRemetente) {
+        this.idRemetente = idRemetente;
     }
 
     public String getConteudo() {
