@@ -9,15 +9,22 @@ public class Bloqueio {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBloqueio;
-    private Usuario bloqueador;
-    private Usuario bloqueado;
+    private Long idBloqueador;
+    private Long idBloqueado;
     private LocalDateTime criadoEm;
 
     public Bloqueio (){}
 
-    public Bloqueio(Usuario bloqueador, Usuario bloqueado) {
-        this.bloqueador = bloqueador;
-        this.bloqueado = bloqueado;
+    public Bloqueio(Long idBloqueio, Long idBloqueador, Long idBloqueado) {
+        this.idBloqueio = idBloqueio;
+        this.idBloqueador = idBloqueador;
+        this.idBloqueado = idBloqueado;
+        this.criadoEm = LocalDateTime.now();
+    }
+
+    public Bloqueio(Long idBloqueador, Long idBloqueado) {
+        this.idBloqueador = idBloqueador;
+        this.idBloqueado = idBloqueado;
         this.criadoEm = LocalDateTime.now();
     }
 
@@ -29,20 +36,20 @@ public class Bloqueio {
         this.idBloqueio = idBloqueio;
     }
 
-    public Usuario getBloqueador() {
-        return bloqueador;
+    public Long getIdBloqueador() {
+        return idBloqueador;
     }
 
-    public void setBloqueador(Usuario bloqueador) {
-        this.bloqueador = bloqueador;
+    public void setIdBloqueador(Long idBloqueador) {
+        this.idBloqueador = idBloqueador;
     }
 
-    public Usuario getBloqueado() {
-        return bloqueado;
+    public Long getIdBloqueado() {
+        return idBloqueado;
     }
 
-    public void setBloqueado(Usuario bloqueado) {
-        this.bloqueado = bloqueado;
+    public void setIdBloqueado(Long idBloqueado) {
+        this.idBloqueado = idBloqueado;
     }
 
     public LocalDateTime getCriadoEm() {
