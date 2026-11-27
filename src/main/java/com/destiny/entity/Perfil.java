@@ -19,22 +19,19 @@ public class Perfil {
     private String bio;
     @Embedded
     private Localizacao localizacao;
-    @Transient //por enquanto nao vai salvar
-    private List<Foto> fotos = new ArrayList<>();
+    private String  fotos;
     private Integer alturaCm;
     private String signo;
     private String escolaridade;
     private String estadoProfissional;
     private String orientacaoSexual;
     private boolean mostrarOrientacao;
-    @Transient //por enquanto nao vai salvar
-    private Set<Hobby> hobbies = new HashSet<>();
+    private Long idHobbies;
     private String tipoRelacionamento;
 
     public Perfil (){}
 
-
-    public Perfil(Long idPerfil, Long idUsuario, String nome, Genero genero, String identidadeGenero, String bio, Localizacao localizacao, List<Foto> fotos, Integer alturaCm, String signo, String escolaridade, String estadoProfissional, String orientacaoSexual, Set<Hobby> hobbies, String tipoRelacionamento) {
+    public Perfil(Long idPerfil, Long idUsuario, String nome, Genero genero, String identidadeGenero, String bio, Localizacao localizacao, String fotos, Integer alturaCm, String signo, String escolaridade, String estadoProfissional, String orientacaoSexual, Long idHobbies, String tipoRelacionamento) {
         this.idPerfil = idPerfil;
         this.idUsuario = idUsuario;
         this.nome = nome;
@@ -50,11 +47,11 @@ public class Perfil {
         this.estadoProfissional = estadoProfissional;
         this.orientacaoSexual = orientacaoSexual;
         this.mostrarOrientacao = false;
-        this.hobbies = hobbies;
+        this.idHobbies = idHobbies;
         this.tipoRelacionamento = tipoRelacionamento;
     }
 
-    public Perfil(Long idUsuario, String nome, Genero genero, String identidadeGenero,String bio, Localizacao localizacao, List<Foto> fotos, Integer alturaCm, String signo, String escolaridade, String estadoProfissional, String orientacaoSexual, Set<Hobby> hobbies, String tipoRelacionamento) {
+    public Perfil(Long idUsuario, String nome, Genero genero, String identidadeGenero,String bio, Localizacao localizacao, String  fotos, Integer alturaCm, String signo, String escolaridade, String estadoProfissional, String orientacaoSexual, Long idHobbies, String tipoRelacionamento) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.genero = genero;
@@ -69,8 +66,27 @@ public class Perfil {
         this.estadoProfissional = estadoProfissional;
         this.orientacaoSexual = orientacaoSexual;
         this.mostrarOrientacao = false;
-        this.hobbies = hobbies;
+        this.idHobbies = idHobbies;
         this.tipoRelacionamento = tipoRelacionamento;
+    }
+
+    public Perfil(Perfil p) {
+        this.idUsuario = p.idUsuario;
+        this.nome = p.getNome();
+        this.genero = p.getGenero();
+        this.identidadeGenero = p.getIdentidadeGenero();
+        this.mostrarIdentidadeGenero = false;
+        this.bio = p.getBio();
+        this.localizacao = p.getLocalizacao();
+        this.fotos = p.getFotos();
+        this.alturaCm = p.getAlturaCm();
+        this.signo = p.getSigno();
+        this.escolaridade = p.getEscolaridade();
+        this.estadoProfissional = p.getEstadoProfissional();
+        this.orientacaoSexual = p.getOrientacaoSexual();
+        this.mostrarOrientacao = false;
+        this.idHobbies = p.idHobbies;
+        this.tipoRelacionamento = p.tipoRelacionamento;
     }
 
     public Long getIdPerfil() {
@@ -137,11 +153,11 @@ public class Perfil {
         this.localizacao = localizacao;
     }
 
-    public List<Foto> getFotos() {
+    public String getFotos() {
         return fotos;
     }
 
-    public void setFotos(List<Foto> fotos) {
+    public void setFotos(String  fotos) {
         this.fotos = fotos;
     }
 
@@ -193,12 +209,12 @@ public class Perfil {
         this.mostrarOrientacao = mostrarOrientacao;
     }
 
-    public Set<Hobby> getHobbies() {
-        return hobbies;
+    public Long getIdHobbies() {
+        return idHobbies;
     }
 
-    public void setHobbies(Set<Hobby> hobbies) {
-        this.hobbies = hobbies;
+    public void setHobbies(Long idHobbies) {
+        this.idHobbies = idHobbies;
     }
 
     public String getTipoRelacionamento() {
@@ -207,5 +223,9 @@ public class Perfil {
 
     public void setTipoRelacionamento(String tipoRelacionamento) {
         this.tipoRelacionamento = tipoRelacionamento;
+    }
+
+    public void setIdHobbies(Long idHobbies) {
+        this.idHobbies = idHobbies;
     }
 }
